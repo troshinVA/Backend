@@ -1,0 +1,113 @@
+ /*Страница статьи*/
+
+
+      * {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    background: rgba(133, 103, 214,0.5) ;
+    font-family: 'Montserrat', sans-serif;
+    color: #606060;
+    font-size: 14px;
+}
+.container {
+
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 0 15px;
+    background: rgba(136, 119, 184,0.3);
+}
+.post-content{
+
+    color:#000;
+
+}
+.post-image img {
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+.post h1 {
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.post-meta {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+time,
+.author {
+    padding-right: 26px;
+    position: relative;
+}
+time:after,
+.author:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #666;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    color:#000;
+   } 
+
+.button{
+  height:50px;
+  width:100%;
+  border-radius:3px;
+  border:rgba(0,0,0,.3) 0px solid;
+  box-sizing:border-box;
+  padding:10px;
+  background:rgba(92, 65, 166,0.8);
+  color:#FFF;
+  font-family: 'Open Sans', sans-serif;  
+  font-weight:400;
+  font-size: 16pt;
+  transition:background .4s;
+  cursor:pointer;
+}
+/* Изменение фона кнопки при наведении */
+.button:hover{
+  background: #e8f6ff;
+  color:#000;
+}
+
+
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        background: rgba(136, 119, 184,0.3)
+        padding: 0 45px;
+        -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
+        box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);  
+    }
+    .post-image img {
+        float: right;
+        width: 300px;
+        margin: 0 0 20px 20px;
+    }
+    .post-header {
+        padding-left: 26px;
+        border-left: 4px solid #D8D8D8;
+        margin-left: -30px;
+    }
+}
+
+
