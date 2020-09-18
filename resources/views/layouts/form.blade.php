@@ -5,7 +5,6 @@
 	    <title>Конференция 2020</title>
 	    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
-	   
 	  </head>
 
 		 <body class="form">
@@ -15,6 +14,7 @@
 			<!-- Отображение ошибок в вводе -->
 
 			@if ($errors->any())
+
 			    <div class="alert alert-danger">
 			        <ul>
 			            @foreach ($errors->all() as $error)
@@ -22,6 +22,7 @@
 			            @endforeach
 			        </ul>
 			    </div>
+
 			@endif
 					<!-- Форма регистрации  -->
 
@@ -41,7 +42,6 @@
 							</div>
 						</div>
 
-
 						<div class="form-group">
 							{!! Form::label('department','Подразделение',['class'=>'col-xs-2 control-label']) !!}
 							<div class="col-xs-8">
@@ -56,7 +56,6 @@
 							</div>
 						</div>
 
-
 						<div class="form-group">
 							{!! Form::label('phone','Номер телефона',['class'=>'col-xs-2 control-label']) !!}
 							<div class="col-xs-8">
@@ -67,38 +66,28 @@
 						<div class="form-group">
 							<div class="col-xs-8">
 								{!! Form::label('checkbox','Хочу быть докладчиком!') !!}
-								{!! Form::radio('checkbox', '1' ,true,['class'=>'radio1', 'onclick'=>
-								'enable()']) !!} 
+								{!! Form::radio('checkbox', '1' ,true,['class'=>'radio1', 'onclick'=>'enable()']) !!}
 							</div>
 
 							<div class="col-xs-8">
 								{!! Form::label('checkbox',' Приду просто посмотреть') !!}
-								{!! Form::radio('checkbox', '0' ,false,['class'=>'radio2', 'onclick'=>
-								'disable()']) !!}
+								{!! Form::radio('checkbox', '0' ,false,['class'=>'radio2', 'onclick'=>'disable()']) !!}
 							</div>
 
 						</div>
 							<br><br>
 
-
 							<div class="visible" id="hidden">
 
-								
+							{!! Form::label('nameOfThesis','Тема доклада') !!}
 
-									{!! Form::label('nameOfThesis','Тема доклада') !!}
-									
-									{!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'textbox','placeholder'=>'Тема доклада']) !!}
-								
-						
-									{!! Form::label('descriptionOfThesis','Краткое описание доклада') !!}
+							{!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'textbox','placeholder'=>'Тема доклада']) !!}
 
-									
-									{!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'message','placeholder'=>'Описание']) !!}
-									
-								
+							{!! Form::label('descriptionOfThesis','Краткое описание доклада') !!}
+
+							{!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'message','placeholder'=>'Описание']) !!}
 
 							</div>
-							
 
 						<div>
 						{!! Form::button('Регистрация',['class'=>'button','type'=>'submit']) !!}
@@ -106,18 +95,16 @@
 
 					{!! Form::close() !!}
 
-
-
 				<a  class="button" href="{{ route('home')}}">Назад</a>
 
-		<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>		
+		<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
  		<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 		</body>
 
-		
+
 </html>
 
 

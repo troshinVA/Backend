@@ -194,6 +194,6 @@ return [
         'emailAddress'          =>'E-mail',
         'nameOfThesis'          => 'Тема доклада',
         'descriptionOfThesis'   => 'Краткое описание доклада',
-        'department'   => 'Краткое описание доклада',
+        'department'   => 'Подразделение',
     ],
 ];

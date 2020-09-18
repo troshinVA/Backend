@@ -13,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// Route to main page
 Route::get('/','IndexController@execute')->name('home');
 
-
-// Route::resource('form', 'FormController1')->name('form');
-
+// Route for form
 Route::match(['get','post'],'form','FormController@execute')->name('form');
 
-
-
+// Route to page with list of all members
 Route::get('list','ListController@execute')->name('list');
 
+// Route to page with description of thesis by {id} - speaker
 Route::get('page/{id}','PageController@execute')->name('page');
 
 

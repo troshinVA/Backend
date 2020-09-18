@@ -229,6 +229,8 @@ return [
         
         'Form'=>Collective\Html\FormFacade::class,
         'Html'=>Collective\Html\HtmlFacade::class,
+        'ValidationRules'=>App\Services\ValidationRules::class,
+        'Bitrix'=>App\Services\Bitrix::class,
 
     ],
 
