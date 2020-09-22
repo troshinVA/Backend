@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Services\ValidationRules;
 use App\Services\Bitrix;
@@ -27,12 +26,12 @@ class FormController extends Controller
                     );
             }
 
-                Bitrix::setLead($input);
+            Bitrix::setLead($input);
 
-                $members = new Members();
-                $members->fill($input);
+            $members = new Members();
+            $members->fill($input);
             if ($members->save()) {
-                 return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
+                return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
             }
 
         }
@@ -42,7 +41,5 @@ class FormController extends Controller
         }
 
     }
-
-
 
 }

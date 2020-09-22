@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
     <title>Список участников.</title>
 
 
-  </head>
-  <body>
+</head>
+<body>
 
-  <header>
-      <h1>Конференция 2020</h1>
-  </header>
+<header>
+    <h1>Конференция 2020</h1>
+</header>
 
 <main>
 
-<button class="button"> <a href="{{ route('home') }}">Список докладчиков</a> </button>
+    <button class="button"><a href="{{ route('home') }}">Список докладчиков</a></button>
 
-<button class="button"><a href="{{ route('form') }}">Хочу на конференцию!</a></button>
+    <button class="button"><a href="{{ route('form') }}">Хочу на конференцию!</a></button>
 
-<br><br>
+    <br><br>
 
-  <div>
+    <div>
 
         <table border="1">
-             <h2>Участники конференции</h2>
+            <h2>Участники конференции</h2>
 
-                <tr> 
-                  <th>Участник</th> 
-                
-                  <th>Подразделение</th>
-                </tr>
+            <tr>
+                <th>Участник</th>
 
-                @if(isset($members) && is_object($members))
+                <th>Подразделение</th>
+            </tr>
 
-                  @foreach($members as $member) 
-                
-                <tr> 
-                  
-                  <td>{{$member->name}} {{$member->lastname}}</td>
-                  <td>{{ $member->department }}</td>
-                </tr>
+            @if(isset($members) && is_object($members))
 
-                  @endforeach
+                @foreach($members as $member)
 
-                @endif
-                
+                    <tr>
+
+                        <td>{{$member->name}} {{$member->lastname}}</td>
+                        <td>{{ $member->department }}</td>
+                    </tr>
+
+                @endforeach
+
+            @endif
+
         </table>
 
-</div>
-
+    </div>
 
 
 </main>
