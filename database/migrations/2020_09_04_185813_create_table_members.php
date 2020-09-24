@@ -17,15 +17,20 @@ class CreateTableMembers extends Migration
             $table->id();
 
             $table->string('name', 100); //заголовок 'name' - имя поля, 100 колличество симолов
-            $table->string('lastname', 100); // псевдоним
+
+            $table->string('lastname', 100);
 
             $table->string('emailAddress', 100);
-            
+
             $table->integer('phone');
+
             $table->string('department', 100);
+
             $table->boolean('checkbox');
-            $table->string('nameOfThesis', 255);
-            $table->text('descriptionOfThesis');
+
+            $table->string('nameOfThesis', 255)->default('Зритель - не выступает с докладом');
+
+            $table->text('descriptionOfThesis')->default('Зритель - не выступает с докладом');
 
             $table->timestamps();
         });

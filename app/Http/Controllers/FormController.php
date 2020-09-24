@@ -30,6 +30,7 @@ class FormController extends Controller
 
             $members = new Members();
             $members->fill($input);
+
             if ($members->save()) {
                 return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
             }

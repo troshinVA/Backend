@@ -8,7 +8,7 @@ class Bitrix
     public static function setLead($input)
     {
 
-        $queryUrl = 'https://b24-7ksfpt.bitrix24.ru/rest/1/ujv8h0f4nnp3o0z4/crm.lead.add.json';
+        $queryUrl = env('BITRIX_URL');
         $queryData = http_build_query(
             array(
                 'fields' => array(
@@ -38,9 +38,10 @@ class Bitrix
             )
         );
 
-        $result = curl_exec($curl);
+//        $result =
+        curl_exec($curl);
         curl_close($curl);
-        $result = json_decode($result, 1);
+//        $result = json_decode($result, 1);
     }
 
 

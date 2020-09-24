@@ -12,25 +12,17 @@
 
 <h1>Регистрация на конференцию.</h1>
 
-<!-- Отображение ошибок в вводе -->
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-
-
-@endif
 <!-- Форма регистрации  -->
 
 {!! Form::open(['url'=>route('form'),'class'=>'form-horizontal','method'=>'POST']) !!}
 
 <div class="form-group">
     {!! Form::label('name','Имя',['class'=>'col-xs-2 control-label']) !!}
+
+    @error('name')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-xs-8">
         {!! Form::text('name', old('name'),['class'=>'textbox','placeholder'=>'Введите имя']) !!}
     </div>
@@ -38,6 +30,11 @@
 
 <div class="form-group">
     {!! Form::label('lastname','Фамилия',['class'=>'col-xs-2 control-label']) !!}
+
+    @error('lastname')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-xs-8">
         {!! Form::text('lastname', old('lastname'),['class'=>'textbox','placeholder'=>'Введите фамилию']) !!}
     </div>
@@ -46,6 +43,11 @@
 
 <div class="form-group">
     {!! Form::label('department','Подразделение',['class'=>'col-xs-2 control-label']) !!}
+
+    @error('department')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-xs-8">
         {!! Form::text('department', old('department'),['class'=>'textbox','placeholder'=>'Название подразделения']) !!}
     </div>
@@ -53,6 +55,11 @@
 
 <div class="form-group">
     {!! Form::label('emailAddress','E-mail',['class'=>'col-xs-2 control-label']) !!}
+
+    @error('emailAddress')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-xs-8">
         {!! Form::text('emailAddress', old('emailAddress'),['class'=>'textbox','placeholder'=>'Введите e-mail']) !!}
     </div>
@@ -61,6 +68,11 @@
 
 <div class="form-group">
     {!! Form::label('phone','Номер телефона',['class'=>'col-xs-2 control-label']) !!}
+
+    @error('phone')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-xs-8">
         {!! Form::text('phone', old('phone'),['class'=>'textbox','placeholder'=>'79XXXXXXXXX']) !!}
     </div>
@@ -88,10 +100,18 @@
 
     {!! Form::label('nameOfThesis','Тема доклада') !!}
 
+    @error('nameOfThesis')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     {!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'textbox','placeholder'=>'Тема доклада']) !!}
 
 
     {!! Form::label('descriptionOfThesis','Краткое описание доклада') !!}
+
+    @error('descriptionOfThesis')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
 
 
     {!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'message','placeholder'=>'Описание']) !!}
