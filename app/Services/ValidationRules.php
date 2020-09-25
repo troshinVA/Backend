@@ -22,9 +22,12 @@ class ValidationRules
 
         if ($input['checkbox'] == 1) {
 
-            $rules = array_merge($rules, [
+            $rules = array_merge(
+                $rules, [
                 'nameOfThesis' => 'required|max:500',
-                'descriptionOfThesis' => 'required|max:1000']);
+                'descriptionOfThesis' => 'required|max:1000']
+            );
+
         }else{
 
             $input['nameOfThesis']='Зритель - не выступает с докладом';
