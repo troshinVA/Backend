@@ -12,8 +12,6 @@ class IndexController extends Controller
     {
 
         $speakers = Members::where('checkbox', '=', 1)->get();
-
-
         return view('layouts.main', array('speakers' => $speakers));
 
     }

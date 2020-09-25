@@ -22,12 +22,13 @@
     <list default="true" id="84772ba2-6b7f-48e3-99d4-23a5af5e682a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Members.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Members.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Bitrix.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Bitrix.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/ValidationRules.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ValidationRules.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_185813_create_table_members.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_185813_create_table_members.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/form_memb.blade.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +173,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Laravel\Code\Backend\app\Services" />
+      <recent name="C:\Laravel\Code\Backend\app\Services\Bitrix" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -190,7 +197,7 @@
       <workItem from="1600354932439" duration="10773000" />
       <workItem from="1600665102764" duration="333000" />
       <workItem from="1600666298242" duration="156000" />
-      <workItem from="1600760589189" duration="14316000" />
+      <workItem from="1600760589189" duration="20138000" />
     </task>
     <servers />
   </component>
@@ -221,6 +228,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="591" y="108" key="#EditorConfig/0.0.1536.824@0.0.1536.824" timestamp="1600356740535" />
+    <state x="39" y="91" width="814" height="728" key="#Intentions" timestamp="1601022213998">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="39" y="91" width="814" height="728" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1601022213998" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600407468572">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -229,6 +240,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600666452268" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1601033354675">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1601033354675" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1600407582424">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

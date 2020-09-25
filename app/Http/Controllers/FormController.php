@@ -26,7 +26,7 @@ class FormController extends Controller
                     );
             }
 
-            Bitrix::setLead($input);
+            Bitrix::setLeadParameters($input);
 
             $members = new Members();
             $members->fill($input);

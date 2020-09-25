@@ -14,10 +14,8 @@ class ListController extends Controller
         if (view()->exists('layouts.list')) {
 
             $members = Members::all();
-
-            // dd(array('members'=>$members));
-
             return view('layouts.list', array('members' => $members));
+
         }
 
 

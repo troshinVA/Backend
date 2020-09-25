@@ -16,7 +16,6 @@ class PageController extends Controller
 
         }
 
-
         if (view()->exists('layouts.page')) {
 
             $page = Members::where('id', strip_tags($id))->first();
@@ -30,14 +29,9 @@ class PageController extends Controller
 
             ];
 
-
-            // dd($data);
-
             return view('layouts.page', $data);
 
-
         }
-
 
     }
 }

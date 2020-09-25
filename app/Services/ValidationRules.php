@@ -25,15 +25,18 @@ class ValidationRules
             $rules = array_merge($rules, [
                 'nameOfThesis' => 'required|max:500',
                 'descriptionOfThesis' => 'required|max:1000']);
+        }else{
+
+            $input['nameOfThesis']='Зритель - не выступает с докладом';
+            $input['descriptionOfThesis']='Зритель - не выступает с докладом';
+
         }
 
         $validator = Validator::make(
             $input, $rules
         );
 
-
         return array($input, $validator);
-
 
     }
 }
