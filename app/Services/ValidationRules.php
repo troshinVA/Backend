@@ -6,10 +6,9 @@ use Validator;
 
 class ValidationRules
 {
-    public static function checkValid($request)
+    public static function checkValid($input)
     {
 
-        $input = $request->except('_token');
         $rules = [
 
             'name' => 'required|max:255',
@@ -28,18 +27,13 @@ class ValidationRules
                 'descriptionOfThesis' => 'required|max:1000']
             );
 
-        }else{
-
-            $input['nameOfThesis']='Зритель - не выступает с докладом';
-            $input['descriptionOfThesis']='Зритель - не выступает с докладом';
-
         }
 
         $validator = Validator::make(
             $input, $rules
         );
 
-        return array($input, $validator);
+        return ($validator);
 
     }
 }

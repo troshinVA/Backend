@@ -14,8 +14,8 @@ class FormController extends Controller
 
         if ($request->isMethod('post')) {
 
-            $input = ValidationRules::checkValid($request)[0];
-            $validator = ValidationRules::checkValid($request)[1];
+            $input = $request->except('_token');
+            $validator = ValidationRules::checkValid($input);
 
             if ($validator->fails()) {
 
@@ -26,12 +26,14 @@ class FormController extends Controller
                     );
             }
 
-            Bitrix::setLeadParameters($input);
+
 
             $members = new Members();
             $members->fill($input);
 
             if ($members->save()) {
+
+                Bitrix::setLeadParameters($input);
                 return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
             }
 
