@@ -7,7 +7,19 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
 
-    
+    /**
+     * Create a new HTTP kernel instance.
+     *
+     * @param Application $app
+     * @param Router      $router
+     * @return void
+     */
+    public function __construct(Application $app, Router $router)
+    {
+        parent::__construct($app, $router);
+
+        $this->prependToMiddlewarePriority(ForceJsonResponse::class);
+    }
     /**
      * The application's global HTTP middleware stack.
      *
