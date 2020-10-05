@@ -16,6 +16,9 @@
 
 {!! Form::open(['url'=>route('form'),'class'=>'form-horizontal','method'=>'POST']) !!}
 
+{{ csrf_field() }}
+
+
 <div class="form-group">
     {!! Form::label('name','Имя',['class'=>'col-xs-2 control-label']) !!}
 
