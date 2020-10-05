@@ -24,5 +24,3 @@ Route::get('list','ListController@execute')->name('list');
 
 // Route to page with description of thesis by {id} - speaker
 Route::get('page/{id}','PageController@execute')->name('page');
-
-

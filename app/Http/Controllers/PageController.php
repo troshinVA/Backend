@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Members;
+use Illuminate\View\View;
 
+/**
+ * Class PageController
+ *
+ * @package App\Http\Controllers
+ */
 class PageController extends Controller
 {
+    /**
+     * @param  $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|View
+     */
     public function execute($id)
     {
 

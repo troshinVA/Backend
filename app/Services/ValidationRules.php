@@ -4,8 +4,17 @@ namespace App\Services;
 
 use Validator;
 
+/**
+ * Class ValidationRules
+ *
+ * @package App\Services
+ */
 class ValidationRules
 {
+    /**
+     * @param  $input
+     * @return mixed $validator
+     */
     public static function checkValid($input)
     {
 
