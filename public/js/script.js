@@ -14,3 +14,14 @@ for (let rad of radio) {
         }
     }
 }
+
+window.onload = function () {
+
+    if (radio[1].checked) {
+        visible.hidden = true;
+        visible.disabled = true;
+    } else {
+        visible.hidden = false;
+        visible.disabled = false;
+    }
+}
