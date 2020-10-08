@@ -27,7 +27,7 @@
     @enderror
 
     <div class="col-xs-8">
-        {!! Form::text('name', old('name'),['class'=>'textbox','placeholder'=>'Введите имя']) !!}
+        {!! Form::text('name', old('name'),['class'=>'textbox','placeholder'=>'Введите имя','autofocus'=>'true']) !!}
     </div>
 </div>
 
@@ -77,7 +77,7 @@
     @enderror
 
     <div class="col-xs-8">
-        {!! Form::text('phone', old('phone'),['class'=>'textbox','placeholder'=>'79XXXXXXXXX']) !!}
+        {!! Form::text('phone', old('phone'),['class'=>'textbox','placeholder'=>'79XXXXXXXXX','type'=>'tel']) !!}
     </div>
 </div>
 
