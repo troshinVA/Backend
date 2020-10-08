@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <title>Конференция 2020</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
-
 
 </head>
 
@@ -14,128 +14,122 @@
 
 <!-- Форма регистрации  -->
 
-{!! Form::open(['url'=>route('form'),'class'=>'form-horizontal','method'=>'POST']) !!}
+<form action="{{ route('form') }}" method="post">
 
-{{ csrf_field() }}
+    {{ csrf_field() }}
 
+    <div class="form-group">
+        <label for="name-field" class="col-xs-2 control-label"> Имя </label>
 
-<div class="form-group">
-    {!! Form::label('name','Имя',['class'=>'col-xs-2 control-label']) !!}
+        @error('name')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
-    @error('name')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
+        <div class="col-xs-8">
+            <input type="text" name="name" value="{{ old('name') }}" id="name-field" placeholder="Введите имя" class="textbox">
+        </div>
 
-    <div class="col-xs-8">
-        {!! Form::text('name', old('name'),['class'=>'textbox','placeholder'=>'Введите имя']) !!}
-    </div>
-</div>
-
-<div class="form-group">
-    {!! Form::label('lastname','Фамилия',['class'=>'col-xs-2 control-label']) !!}
-
-    @error('lastname')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-
-    <div class="col-xs-8">
-        {!! Form::text('lastname', old('lastname'),['class'=>'textbox','placeholder'=>'Введите фамилию']) !!}
-    </div>
-</div>
-
-
-<div class="form-group">
-    {!! Form::label('department','Подразделение',['class'=>'col-xs-2 control-label']) !!}
-
-    @error('department')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-
-    <div class="col-xs-8">
-        {!! Form::text('department', old('department'),['class'=>'textbox','placeholder'=>'Название подразделения']) !!}
-    </div>
-</div>
-
-<div class="form-group">
-    {!! Form::label('emailAddress','E-mail',['class'=>'col-xs-2 control-label']) !!}
-
-    @error('emailAddress')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-
-    <div class="col-xs-8">
-        {!! Form::text('emailAddress', old('emailAddress'),['class'=>'textbox','placeholder'=>'Введите e-mail']) !!}
-    </div>
-</div>
-
-
-<div class="form-group">
-    {!! Form::label('phone','Номер телефона',['class'=>'col-xs-2 control-label']) !!}
-
-    @error('phone')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-
-    <div class="col-xs-8">
-        {!! Form::text('phone', old('phone'),['class'=>'textbox','placeholder'=>'79XXXXXXXXX']) !!}
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="col-xs-8">
-        {!! Form::label('checkbox','Хочу быть докладчиком!') !!}
-        {!! Form::radio('checkbox', '1' ,true,['class'=>'radio1', 'onclick'=>
-        'enable()']) !!}
     </div>
 
-    <div class="col-xs-8">
-        {!! Form::label('checkbox',' Приду просто посмотреть') !!}
-        {!! Form::radio('checkbox', '0' ,false,['class'=>'radio2', 'onclick'=>
-        'disable()']) !!}
+    <div class="form-group">
+        <label for="lastname-field" class="col-xs-2 control-label"> Фамилия </label>
+
+        @error('lastname')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="col-xs-8">
+            <input type="text" name="lastname" value="{{ old('lastname') }}" id="lastname-field" placeholder="Введите фамилию" class="textbox">
+        </div>
+
     </div>
 
-</div>
-<br><br>
+    <div class="form-group">
+        <label for="department-field" class="col-xs-2 control-label"> Подразделение </label>
+
+        @error('department')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="col-xs-8">
+            <input type="text" name="department" value="{{ old('department') }}" id="department-field" placeholder="Название подразделения"
+                   class="textbox">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="email-field" class="col-xs-2 control-label"> E-mail </label>
+
+        @error('emailAddress')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="col-xs-8">
+            <input type="text" name="emailAddress" value="{{ old('emailAddress') }}" id="email-field" placeholder="Введите e-mail" class="textbox">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="phone-field" class="col-xs-2 control-label"> Номер телефона </label>
+
+        @error('phone')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="col-xs-8">
+            <input type="text" name="phone" value="{{ old('phone') }}" id="phone-field" placeholder="79XXXXXXXXX" class="textbox">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-8">
+            <label for="radio1">Хочу быть докладчиком!</label>
+            <input type="radio" value="1" name="checkbox" id="radio1" class="radio" checked>
+        </div>
+
+        <div class="col-xs-8">
+            <label for="radio2">Приду просто посмотреть</label>
+            <input type="radio" value="0" name="checkbox" id="radio2" class="radio">
+        </div>
+
+    </div>
+    <br><br>
 
 
-<div class="visible" id="hidden">
+    <div class="visible" id="hidden">
 
 
-    {!! Form::label('nameOfThesis','Тема доклада') !!}
+        <label for="thesis-field" class="col-xs-2 control-label">Тема доклада</label>
 
-    @error('nameOfThesis')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
+        @error('nameOfThesis')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
-    {!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'textbox','placeholder'=>'Тема доклада']) !!}
-
-
-    {!! Form::label('descriptionOfThesis','Краткое описание доклада') !!}
-
-    @error('descriptionOfThesis')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
+        <input type="text" placeholder="Тема доклада" value="{{ old('nameOfThesis') }}" class="textbox" id="thesis-field" name="nameOfThesis">
 
 
-    {!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'message','placeholder'=>'Описание']) !!}
+        <label for="description-field" class="col-xs-2 control-label">Описание доклада</label>
+
+        @error('descriptionOfThesis')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <textarea type="text" rows=7 class="message"  id="description-field" name="descriptionOfThesis">
+          {{ old('descriptionOfThesis') }}  </textarea>
+
+    </div>
 
 
-</div>
+    <input type="submit" value="Регистрация" class="button">
 
-
-<div>
-    {!! Form::button('Регистрация',['class'=>'button','type'=>'submit']) !!}
-</div>
-
-{!! Form::close() !!}
-
+</form>
 
 <a class="button" href="{{ route('home')}}">Назад</a>
 
 <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 

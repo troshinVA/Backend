@@ -11,9 +11,11 @@ h1 {
 
     color: #000;
 
-
 }
 
+.hidden {
+    display:none;
+}
 
 body {
     background: rgba(133, 103, 214, 0.5);
@@ -165,5 +167,10 @@ table tr {
 
 }
 
+.col-xs-2.control-label{
 
+    font-family: "Arial", serif;
+    font-size: large;
+
+}
 

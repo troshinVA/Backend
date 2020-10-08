@@ -1,10 +1,16 @@
+let radio = document.querySelectorAll('.radio');
+let visible = document.querySelector('.visible');
 
-function disable() {
-document.getElementById("hidden").disabled = true;
-document.getElementById("hidden").hidden = true;
-}
+for (let rad of radio) {
 
-function enable() {
-document.getElementById("hidden").disabled = false;
-document.getElementById("hidden").hidden = false;
+    rad.onclick = function () {
+
+        if (rad.value === '0') {
+            visible.hidden = true;
+            visible.disabled = true;
+        } else {
+            visible.hidden = false;
+            visible.disabled = false;
+        }
+    }
 }

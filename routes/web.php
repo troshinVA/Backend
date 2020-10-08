@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','IndexController@execute')->name('home');
 
 // Route for form
-Route::match(['get','post'],'form','FormController@execute')->name('form');
+//Route::match(['get','post'],'form','FormController@execute')->name('form');
+Route::get('form','FormController@getForm')->name('form');
+Route::post('form','FormController@postForm')->name('form');
 
 // Route to page with list of all members
 Route::get('list','ListController@execute')->name('list');
