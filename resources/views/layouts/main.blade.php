@@ -35,13 +35,28 @@
 
                 @foreach($speakers as $speaker)
 
-                    <tr>
-                        <td class="row"><a
-                                href="{{route('page',array('id'=>$speaker->id))}}"> {{ $speaker->nameOfThesis }} </a>
-                        </td>
-                        <td>{{$speaker->name}} {{$speaker->lastname}}</td>
-                        <td>{{ $speaker->department }}</td>
-                    </tr>
+                    @if ($speaker->status === 'Не принят' && $speaker->nameOfThesis !== null)
+
+                        <tr class="not-processed">
+                            <td class="not-processed">
+                                {{ $speaker->nameOfThesis }}
+                                {{--                      <a href="{{route('page',array('id'=>$speaker->id))}}" disabled> {{ $speaker->nameOfThesis }} </a>--}}
+                            </td>
+                            <td>{{$speaker->name}} {{$speaker->lastname}}</td>
+                            <td>{{ $speaker->department }}</td>
+                        </tr>
+
+                    @elseif ($speaker->nameOfThesis !== null)
+
+                        <tr>
+                            <td class="row"><a
+                                    href="{{route('page',array('id'=>$speaker->id))}}"> {{ $speaker->nameOfThesis }} </a>
+                            </td>
+                            <td>{{$speaker->name}} {{$speaker->lastname}}</td>
+                            <td>{{ $speaker->department }}</td>
+                        </tr>
+
+                    @endif
 
                 @endforeach
 

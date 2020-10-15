@@ -92,6 +92,8 @@
         {!! Form::radio('checkbox', '0' ,false,['class'=>'radio','id'=>'radio']) !!}
     </div>
 
+    {!! Form::hidden('status' ,'Не принято', ['class'=>'status','value'=>'Не принято']) !!}
+
 </div>
 <br><br>
 
@@ -105,7 +107,7 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
-    {!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'textbox','placeholder'=>'Тема доклада']) !!}
+    {!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'textbox here','placeholder'=>'Тема доклада']) !!}
 
 
     {!! Form::label('descriptionOfThesis','Краткое описание доклада') !!}
@@ -115,7 +117,7 @@
     @enderror
 
 
-    {!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'message','placeholder'=>'Описание']) !!}
+    {!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'message','placeholder'=>'Описание','id'=>'descriptionThesis']) !!}
 
 
 </div>

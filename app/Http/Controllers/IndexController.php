@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use App\Members;
 use Illuminate\View\View;
+use App\Services\Bitrix;
 
 /**
  * Class IndexController
@@ -14,14 +16,17 @@ use Illuminate\View\View;
 class IndexController extends Controller
 {
     /**
-     * @param  Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|View
+     * @return Application|Factory|View
      */
-    public function execute(Request $request)
+    public function execute()
     {
 
-        $speakers = Members::where('checkbox', '=', 1)->get();
-        return view('layouts.main', array('speakers' => $speakers));
+        $speakers = Members::all();
+        
+        $lead = new Bitrix();
+        $speakersStatusUpdate = $lead->checkLeadStatus($speakers);
+
+        return view('layouts.main', array('speakers' => $speakersStatusUpdate));
 
     }
 }

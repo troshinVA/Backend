@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Members;
 use Illuminate\View\View;
@@ -14,7 +16,7 @@ use Illuminate\View\View;
 class ListController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|View
+     * @return Application|Factory|View
      */
     public function execute()
     {
@@ -26,8 +28,6 @@ class ListController extends Controller
 
         }
 
-
     }
-
 
 }

@@ -131,7 +131,7 @@ table {
     border-collapse: collapse;
     justify-content: center;
     align-items: center;
-    background: rgba(145, 125, 199);
+    background: rgb(145, 125, 198);
     margin: auto;
 }
 
@@ -152,7 +152,7 @@ table tr {
 
 
 .row {
-    background: rgba(92, 65, 166, 0.8);
+    background: rgba(107, 76, 190, 0.6);
 }
 
 
@@ -174,3 +174,8 @@ table tr {
 
 }
 
+.not-processed{
+
+    background-color: #666666;
+
+}

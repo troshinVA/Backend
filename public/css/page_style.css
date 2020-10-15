@@ -61,21 +61,21 @@ p {
     margin-bottom: 1em;
 }
 
-a { 
+a {
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
     color:#000;
-   } 
+   }
 
-.button{
+.button {
   height:50px;
   width:100%;
   border-radius:3px;
-  border:rgba(0,0,0,.3) 0px solid;
+  border:rgba(0,0,0,.3) 0 solid;
   box-sizing:border-box;
   padding:10px;
   background:rgba(92, 65, 166,0.8);
   color:#FFF;
-  font-family: 'Open Sans', sans-serif;  
+  font-family: 'Open Sans', sans-serif;
   font-weight:400;
   font-size: 16pt;
   transition:background .4s;
@@ -93,10 +93,10 @@ a {
         font-size: 16px;
     }
     .container {
-        background: rgba(136, 119, 184,0.3)
+        background: rgba(136, 119, 184,0.3);
         padding: 0 45px;
-        -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
-        box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);  
+        -webkit-box-shadow:  0 0 15px 0 rgba(0, 0, 0, .45);
+        box-shadow:  0 0 15px 0 rgba(0, 0, 0, .45);
     }
     .post-image img {
         float: right;

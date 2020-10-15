@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\Request;
-use App\Services\ValidationRules;
 use App\Services\Bitrix;
 use App\Members;
 use App\Http\Requests\FormValidation;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 /**
@@ -29,7 +28,12 @@ class FormController extends Controller
 
     }
 
-    public function postForm(FormValidation $request){
+    /**
+     * @param  FormValidation $request
+     * @return RedirectResponse
+     */
+    public function postForm(FormValidation $request)
+    {
 
         $input = $request->except('_token');
 
@@ -41,12 +45,10 @@ class FormController extends Controller
         if ($members->save()) {
 
             $newLead = new Bitrix;
-            $queryData = $newLead->setData($input);   // set Lead's data to further transmitting to Bitrix
-            $newLead->createLead($queryData, env('BITRIX_URL'));   // put new Lead to Bitrix
+            $newLead->addLead($input);   // put new Lead to Bitrix
 
             return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
         }
 
     }
 }
-

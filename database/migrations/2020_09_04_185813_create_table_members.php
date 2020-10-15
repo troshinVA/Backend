@@ -22,15 +22,17 @@ class CreateTableMembers extends Migration
 
             $table->string('emailAddress', 100);
 
-            $table->integer('phone');
+            $table->string('phone');
 
             $table->string('department', 100);
 
             $table->boolean('checkbox');
 
-            $table->string('nameOfThesis', 255)->default('Зритель - не выступает с докладом');
+            $table->string('nameOfThesis', 255)->nullable();
 
-            $table->text('descriptionOfThesis')->default('Зритель - не выступает с докладом');
+            $table->text('descriptionOfThesis')->nullable();
+
+            $table->string('status')->nullable();
 
             $table->timestamps();
         });
