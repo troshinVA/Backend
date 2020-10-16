@@ -10,7 +10,8 @@ class BitrixHelper
      * @param Members $members
      * @return array
      */
-    public static function setDataAddLead(Members $members){
+    public static function setDataAddLead(Members $members)
+    {
 
         return ['fields' => [
 

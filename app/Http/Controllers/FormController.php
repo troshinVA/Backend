@@ -30,7 +30,7 @@ class FormController extends Controller
     }
 
     /**
-     * @param  FormValidation $request
+     * @param FormValidation $request
      * @return RedirectResponse
      */
     public function postForm(FormValidation $request)
