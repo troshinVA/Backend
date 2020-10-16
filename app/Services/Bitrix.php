@@ -67,7 +67,7 @@ class Bitrix
         $leadList = $this->getLeadList();
         $count = 0;
 //        $this->deleteLead('121');
-//        dd($leadList);
+        //dd($leadList);
         foreach ($leadList['result'] as $lead) {
             $leadInfo = $this->getLead($lead['ID']);
 

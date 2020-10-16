@@ -35,7 +35,7 @@
 
                 @foreach($speakers as $speaker)
 
-                    @if ($speaker->status == '0' && $speaker->nameOfThesis !== null)
+                    @if ($speaker->status == 0 && $speaker->nameOfThesis !== null)
 
                         <tr class="not-processed">
                             <td class="not-processed">

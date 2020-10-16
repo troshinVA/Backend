@@ -24,7 +24,7 @@ class IndexController extends Controller
         $speakers = Members::all();
         $newBitrix = new Bitrix();
         $speakersStatusUpdate = $newBitrix->checkLeadStatus($speakers);
-
+//        dd($speakersStatusUpdate);
         return view('layouts.main', array('speakers' => $speakersStatusUpdate));
 
     }
