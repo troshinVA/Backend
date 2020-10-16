@@ -35,13 +35,13 @@
             @if(isset($members) && is_object($members))
 
                 @foreach($members as $member)
-
+                    @if($member->bitrixId !== null)
                     <tr>
 
                         <td>{{$member->name}} {{$member->lastname}}</td>
                         <td>{{ $member->department }}</td>
                     </tr>
-
+                    @endif
                 @endforeach
 
             @endif
