@@ -66,6 +66,7 @@ class Bitrix
             }
 
         }
+
         return $speakers;
     }
 

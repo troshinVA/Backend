@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="84772ba2-6b7f-48e3-99d4-23a5af5e682a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Bitrix.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Bitrix.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +213,7 @@
       <workItem from="1602741784318" duration="8756000" />
       <workItem from="1602778745772" duration="620000" />
       <workItem from="1602834406507" duration="13017000" />
-      <workItem from="1602848448093" duration="7170000" />
+      <workItem from="1602848448093" duration="7526000" />
     </task>
     <servers />
   </component>
@@ -267,6 +268,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601708475981" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602855937531">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602855937531" />
     <state x="545" y="325" width="445" height="273" key="ComposerInitDialogKey" timestamp="1602848657274">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
