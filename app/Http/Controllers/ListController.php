@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use App\Members;
+use App\Member;
 use Illuminate\View\View;
 
 /**
@@ -23,7 +23,7 @@ class ListController extends Controller
 
         if (view()->exists('layouts.list')) {
 
-            $members = Members::all();
+            $members = Member::all();
             return view('layouts.list', array('members' => $members));
 
         }

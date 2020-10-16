@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
-use App\Members;
+use App\Member;
 use Illuminate\View\View;
 use App\Services\Bitrix;
 
@@ -21,10 +21,10 @@ class IndexController extends Controller
     public function execute()
     {
 
-        $speakers = Members::all();
+        $speakers = Member::all();
         $newBitrix = new Bitrix();
         $speakersStatusUpdate = $newBitrix->checkLeadStatus($speakers);
-//        dd($speakersStatusUpdate);
+
         return view('layouts.main', array('speakers' => $speakersStatusUpdate));
 
     }

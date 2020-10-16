@@ -32,7 +32,9 @@ class CreateTableMembers extends Migration
 
             $table->text('descriptionOfThesis')->nullable();
 
-            $table->string('status')->nullable();
+            $table->boolean('status')->nullable()->default(0);
+
+            $table->string('bitrixId')->nullable();
 
             $table->timestamps();
         });

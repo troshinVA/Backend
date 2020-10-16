@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use App\Services\Bitrix;
-use App\Members;
+use App\Member;
 use App\Http\Requests\FormValidation;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -24,9 +24,7 @@ class FormController extends Controller
      */
     public function getForm()
     {
-
         return view('layouts.form');
-
     }
 
     /**
@@ -35,20 +33,18 @@ class FormController extends Controller
      */
     public function postForm(FormValidation $request)
     {
-
         $input = $request->except('_token');
         $request->validated();
-        $members = new Members();
-        $members->fill($input);
+        $member = new Member();
+        $member->fill($input);
 
-        if ($members->save()) {
+        $dataAddLead = BitrixHelper::setDataAddLead($member);
+        $newBitrix = new Bitrix;
+        $member->bitrixId = strval($newBitrix->addLead($dataAddLead));
 
-            $dataAddLead = BitrixHelper::setDataAddLead($members);
-            $newBitrix = new Bitrix;
-            $newBitrix->addLead($dataAddLead);   // put new Lead to Bitrix
+        if ($member->save()) {
 
             return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
         }
-
     }
 }

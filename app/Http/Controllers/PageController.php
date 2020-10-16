@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Members;
+use App\Member;
 use Illuminate\View\View;
 
 /**
@@ -28,7 +28,7 @@ class PageController extends Controller
 
         if (view()->exists('layouts.page')) {
 
-            $page = Members::where('id', strip_tags($id))->first();
+            $page = Member::where('id', strip_tags($id))->first();
 
             $data = [
 

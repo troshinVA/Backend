@@ -2,9 +2,6 @@
 
 namespace App\Services;
 
-use App\Helpers\BitrixHelper;
-
-
 /**
  * Class Bitrix
  *
@@ -17,10 +14,8 @@ class Bitrix
      */
     public function addLead($queryDataInput)
     {
-
         $action = 'crm.lead.add.json';
-        $this->curlBitrixConnect($queryDataInput, $action);
-
+        return $this->curlBitrixConnect($queryDataInput, $action)['result'];
     }
 
     /**
@@ -44,18 +39,15 @@ class Bitrix
         $queryDataInput = ['id'];
 
         return $this->curlBitrixConnect($queryDataInput, $action);
-
     }
 
 
     public function deleteLead($id)
     {
-
         $action = 'crm.lead.delete.json';
         $queryDataInput = ['id' => $id];
 
         return $this->curlBitrixConnect($queryDataInput, $action);
-
     }
 
     /**
@@ -64,20 +56,15 @@ class Bitrix
      */
     public function checkLeadStatus($speakers)
     {
-        $leadList = $this->getLeadList();
-        $count = 0;
-//        $this->deleteLead('121');
-        //dd($leadList);
-        foreach ($leadList['result'] as $lead) {
-            $leadInfo = $this->getLead($lead['ID']);
+        foreach ($speakers as $speaker) {
+            $leadInfo = $this->getLead($speaker->bitrixId);
 
-            if ($leadInfo['result']['STATUS_ID'] == 'CONVERTED') {
-
-                $speakers[strval($count)]['status'] = '1';
-
+            if (isset($leadInfo['error'])) {
+                $speaker->bitrixId = null;
+            } elseif ($leadInfo['result']['STATUS_ID'] == 'CONVERTED') {
+                $speaker->status = 1;
             }
 
-            $count++;
         }
         return $speakers;
     }

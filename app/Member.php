@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Members
+ * Class Member
  *
  * @package App
  */
-class Members extends Model
+class Member extends Model
 {
     /**
      * @var string[]
@@ -17,4 +17,5 @@ class Members extends Model
     protected $fillable = ['name','lastname',
     'emailAddress','phone','checkbox','department',
     'nameOfThesis','descriptionOfThesis'];
+
 }

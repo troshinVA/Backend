@@ -34,8 +34,8 @@
             @if(isset($speakers) && is_object($speakers))
 
                 @foreach($speakers as $speaker)
-                        
-                    @if ($speaker->status === '0' && $speaker->nameOfThesis !== null)
+
+                    @if ($speaker->status === 0 && $speaker->nameOfThesis !== null && $speaker->bitrixId !== null)
 
                         <tr class="not-processed">
                             <td class="not-processed">
@@ -45,7 +45,7 @@
                             <td>{{ $speaker->department }}</td>
                         </tr>
 
-                    @elseif ($speaker->nameOfThesis !== null)
+                    @elseif ($speaker->nameOfThesis !== null && $speaker->bitrixId !== null)
 
                         <tr>
                             <td class="row"><a
