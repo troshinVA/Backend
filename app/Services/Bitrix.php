@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Services;
+use App\Helpers\BitrixHelper;
+
+
 /**
  * Class Bitrix
  *
@@ -9,33 +12,13 @@ namespace App\Services;
 class Bitrix
 {
     /**
-     * Generate URL-encoded query string with lead's data
-     *
-     * @param  $input
-     * @return string $queryData
+     * @param $queryDataInput
      */
-    public function addLead($input)
+    public function addLead($queryDataInput)
     {
 
-        $queryUrl = env('BITRIX_URL') . 'crm.lead.add.json';
-        $queryData = http_build_query(
-            array(
-                'fields' => array(
-
-                    'TITLE' => 'Заявка от: ' . $input['name'] . ' ' . $input['lastname'],
-                    'LAST_NAME' => $input['lastname'],
-                    'NAME' => $input['name'],
-                    'PHONE' => array(array('VALUE' => $input['phone'], 'VALUE_TYPE' => 'WORK')),
-                    'EMAIL' => array(array('VALUE' => $input['emailAddress'], 'VALUE_TYPE' => 'WORK')),
-                    'UF_CRM_1599747566' => $input['department'],
-                    'UF_CRM_1599747582' => $input['nameOfThesis'],
-                    'SOURCE_DESCRIPTION' => 'CRM-форма',
-                ),
-                'params' => array('REGISTER_SONET_EVENT' => 'Y')
-            )
-        );
-
-        $this->curlBitrixConnect($queryData, $queryUrl);
+        $action = 'crm.lead.add.json';
+        $this->curlBitrixConnect($queryDataInput, $action);
 
     }
 
@@ -45,14 +28,10 @@ class Bitrix
      */
     public function getLead($id)
     {
-        $queryUrl = env('BITRIX_URL') . 'crm.lead.get.json';
-        $queryData = http_build_query(
-            [
-                'id' => $id
-            ]
-        );
+        $action = 'crm.lead.get.json';
+        $queryDataInput = ['id' => $id];
 
-        return $this->curlBitrixConnect($queryData, $queryUrl);
+        return $this->curlBitrixConnect($queryDataInput, $action);
     }
 
     /**
@@ -60,31 +39,62 @@ class Bitrix
      */
     public function getLeadList()
     {
-        $queryUrl = env('BITRIX_URL') . 'crm.lead.list.json';
-        $queryData = http_build_query(
-            array(
+        $action = 'crm.lead.list.json';
+        $queryDataInput = ['id'];
 
-                'filter' => array(),
+        return $this->curlBitrixConnect($queryDataInput, $action);
 
-                'select' => ['ID','UF_CRM_1599747582']
-            )
-        );
+    }
 
-        return $this->curlBitrixConnect($queryData, $queryUrl);
+
+    public function deleteLead($id)
+    {
+
+        $action = 'crm.lead.delete.json';
+        $queryDataInput = ['id' => $id];
+
+        return $this->curlBitrixConnect($queryDataInput, $action);
 
     }
 
     /**
-     * @param  $queryData
-     * @param  $queryUrl
+     * @param $speakers
      * @return mixed
      */
-    public function curlBitrixConnect($queryData, $queryUrl)
+    public function checkLeadStatus($speakers)
     {
+        $leadList = $this->getLeadList();
+        $count = 0;
+//        $this->deleteLead('121');
+//        dd($leadList);
+        foreach ($leadList['result'] as $lead) {
+            $leadInfo = $this->getLead($lead['ID']);
+
+            if ($leadInfo['result']['STATUS_ID'] == 'CONVERTED') {
+
+                $speakers[strval($count)]['status'] = '1';
+
+            }
+
+            $count++;
+        }
+        return $speakers;
+    }
+
+    /**
+     * @param array $queryDataInput
+     * @param string $action
+     * @return mixed
+     */
+    public function curlBitrixConnect(array $queryDataInput, string $action)
+    {
+        $queryData = http_build_query($queryDataInput);
+        $queryUrl = env('BITRIX_URL') . $action;
 
         $curl = curl_init();
         curl_setopt_array(
             $curl, array(
+
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_POST => 1,
                 CURLOPT_HEADER => 0,
@@ -98,31 +108,5 @@ class Bitrix
         curl_close($curl);
 
         return json_decode($result, true);
-    }
-
-    /**
-     * @param $speakers
-     * @return mixed
-     */
-    public function checkLeadStatus($speakers)
-    {
-
-        $leadList = $this->getLeadList();
-
-        $count = 0;
-
-        foreach ($leadList['result'] as $lead) {
-
-            $leadInfo = $this->getLead($lead['ID']);
-
-            if ($leadInfo['result']['STATUS_ID'] == 'CONVERTED') {
-
-                $speakers[strval($count)]['status'] = 'Принят';
-
-            }
-
-            $count++;
-        }
-        return $speakers;
     }
 }

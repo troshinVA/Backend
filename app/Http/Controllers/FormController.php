@@ -9,6 +9,7 @@ use App\Members;
 use App\Http\Requests\FormValidation;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use App\Helpers\BitrixHelper;
 
 /**
  * Class FormController
@@ -36,16 +37,15 @@ class FormController extends Controller
     {
 
         $input = $request->except('_token');
-
         $request->validated();
-
         $members = new Members();
         $members->fill($input);
 
         if ($members->save()) {
 
-            $newLead = new Bitrix;
-            $newLead->addLead($input);   // put new Lead to Bitrix
+            $dataAddLead = BitrixHelper::setDataAddLead($members);
+            $newBitrix = new Bitrix;
+            $newBitrix->addLead($dataAddLead);   // put new Lead to Bitrix
 
             return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
         }

@@ -22,9 +22,8 @@ class IndexController extends Controller
     {
 
         $speakers = Members::all();
-        
-        $lead = new Bitrix();
-        $speakersStatusUpdate = $lead->checkLeadStatus($speakers);
+        $newBitrix = new Bitrix();
+        $speakersStatusUpdate = $newBitrix->checkLeadStatus($speakers);
 
         return view('layouts.main', array('speakers' => $speakersStatusUpdate));
 

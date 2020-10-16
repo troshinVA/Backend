@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84772ba2-6b7f-48e3-99d4-23a5af5e682a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Bitrix.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Bitrix.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_185813_create_table_members.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_185813_create_table_members.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/page_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/page_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_13_200258_status_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_13_200258_status_update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
     </list>
@@ -180,6 +172,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -219,7 +212,9 @@
       <workItem from="1602480675795" duration="4666000" />
       <workItem from="1602574660119" duration="16827000" />
       <workItem from="1602655775622" duration="7256000" />
-      <workItem from="1602741784318" duration="5826000" />
+      <workItem from="1602741784318" duration="8756000" />
+      <workItem from="1602778745772" duration="620000" />
+      <workItem from="1602834406507" duration="6832000" />
     </task>
     <servers />
   </component>
@@ -270,10 +265,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600666452268" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1602090543077">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1602839222809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1602090543077" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1602839222809" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1600407582424">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -286,10 +281,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1601033962041" />
-    <state x="486" y="184" key="refactoring.ChangeSignatureDialog" timestamp="1600963247879">
+    <state x="478" y="0" width="579" height="824" key="find.popup" timestamp="1602839831575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="486" y="184" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1600963247879" />
+    <state x="478" y="0" width="579" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602839831575" />
+    <state x="486" y="184" key="refactoring.ChangeSignatureDialog" timestamp="1602839839990">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="486" y="184" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1602839839990" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1602602757699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

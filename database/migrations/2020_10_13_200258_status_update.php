@@ -14,7 +14,7 @@ class StatusUpdate extends Migration
     public function up()
     {
         Schema::table('members', function (Blueprint $table) {
-            $table->string('status')->default('Не принят')->change();
+            $table->string('status')->default('0')->change();
         });
     }
 

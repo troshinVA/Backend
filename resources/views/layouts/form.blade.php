@@ -92,7 +92,7 @@
         {!! Form::radio('checkbox', '0' ,false,['class'=>'radio','id'=>'radio']) !!}
     </div>
 
-    {!! Form::hidden('status' ,'Не принято', ['class'=>'status','value'=>'Не принято']) !!}
+    {!! Form::hidden('status' ,'0', ['class'=>'status','value'=>'0']) !!}
 
 </div>
 <br><br>
