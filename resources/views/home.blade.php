@@ -20,29 +20,32 @@
                         <br>
 
                         <h1> Поданые заявки </h1>
-                        <table border="1">
-                            <h2></h2><br>
-
-                            <tr>
-                                <th>Название</th>
-                                <th>Описание</th>
-                                <th>Статус участника</th>
-
-                            </tr>
-                            @foreach($entries as $entry)
+                        @if (count($entries)==0)
+                            <div>Пока что у вас нет ни одной заявки на конференцию(</div>
+                        @else
+                            <table border="1">
                                 <tr>
-                                    <td>
-                                        <a href="{{route('event',['eventId'=>$entry->events->id])}}"> {{ $entry->events->title }} </a>
-                                    </td>
-                                    <td>{{ $entry->events->description }}</td>
-                                    @if ($entry->nameOfThesis != null)
-                                        <td>Докладчик</td>
-                                    @else
-                                        <td>Зритель</td>
-                                    @endif
+                                    <th>Название</th>
+                                    <th>Описание</th>
+                                    <th>Статус участника</th>
+
                                 </tr>
-                            @endforeach
-                        </table>
+                                @foreach($entries as $entry)
+                                    <tr>
+                                        <td>
+                                            <a href="{{route('event',['eventId'=>$entry->events->id])}}"> {{ $entry->events->title }} </a>
+                                        </td>
+                                        <td>{{ $entry->events->description }}</td>
+                                        @if ($entry->nameOfThesis != null)
+                                            <td>Докладчик</td>
+                                        @else
+                                            <td>Зритель</td>
+                                        @endif
+                                    </tr>
+                                @endforeach
+                            </table>
+                        @endif
+
 
                 </div>
             </div>
