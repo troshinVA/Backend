@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <link href="{{ asset('css/page_style.css') }}" rel="stylesheet" type="text/css">
+@extends('layouts.layout')
 
-    <title>{{ $title }}</title>
-
-
-</head>
-<body>
+@section('content')
 <main>
-    <a href="{{ route('home') }}" class="button"> <-- Вернуться к списку</a>
+    <button class="button small left"><a href="{{ route('event',['eventId'=>(int)$eventId]) }}"> Вернуться к списку</a></button>
     <div class="container">
         <div class="post">
             <div>
                 <div class="post-header">
-                    <h1>{{ $title }}</h1>
+                    <h1>{{ $page->nameOfThesis }}</h1>
                     <div class="post-meta">
-                        <span class="author">{{ $speaker }}</span>
-                        <span class="category">{{ $department }}</span>
+                        <span class="author">{{ $page->name . ' ' . $page->lastname }}</span>
+                        <span class="category">{{ $page->department}}</span>
                     </div>
                 </div>
-                <p class="post-content">{{ $description }}
+                <p class="post-content">{{ $page->descriptionOfThesis }}
                 </p>
             </div>
         </div>
@@ -31,5 +22,6 @@
 
 </main>
 
+@endsection
 
 

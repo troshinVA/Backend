@@ -2,26 +2,27 @@
 
 namespace App\Helpers;
 
-use App\Member;
+use App\Models\Entry;
 
 class BitrixHelper
 {
     /**
-     * @param Member $member
+     * @param Entry $entry
      * @return array
      */
-    public static function setDataAddLead(Member $member)
+    public static function setDataAddLead(Entry $entry)
     {
         return ['fields' => [
-                'TITLE' => 'Заявка от: ' . $member->name . ' ' . $member->lastname,
-                'LAST_NAME' => $member->lastname,
-                'NAME' => $member->name,
-                'PHONE' => array(array('VALUE' => $member->phone, 'VALUE_TYPE' => 'WORK')),
-                'EMAIL' => array(array('VALUE' => $member->emailAddress, 'VALUE_TYPE' => 'WORK')),
-                'UF_CRM_1599747566' => $member->department,
-                'UF_CRM_1599747582' => $member->nameOfThesis,
-                'SOURCE_DESCRIPTION' => 'CRM-форма',
-            ],
+            'TITLE' => 'Заявка от: ' . $entry->name . ' ' . $entry->lastname,
+            'LAST_NAME' => $entry->lastname,
+            'NAME' => $entry->name,
+            'PHONE' => array(array('VALUE' => $entry->phone, 'VALUE_TYPE' => 'WORK')),
+            'EMAIL' => array(array('VALUE' => $entry->email, 'VALUE_TYPE' => 'WORK')),
+            env('BITRIX_CUSTOM_FIELD_DEPARTMENT') => $entry->department,
+            env('BITRIX_CUSTOM_FIELD_NAME_OF_THESIS') => $entry->nameOfThesis,
+            env('BITRIX_CUSTOM_FIELD_CONFERENCE_TITLE') => $entry->events->title,
+            'SOURCE_DESCRIPTION' => 'CRM-форма',
+        ],
             'params' => array('REGISTER_SONET_EVENT' => 'Y'),
         ];
     }

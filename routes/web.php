@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route to main page
-Route::get('/','IndexController@execute')->name('home');
+Route::get('/', 'IndexController@index')->name('main');
+Route::prefix('event/{eventId}')->group(function () {
+    Route::get('/', 'EventController@execute')->name('event');
+    Route::get('page/{pageId}', 'PageController@execute')->name('page');
+    Route::get('list', 'ListController@execute')->name('list');
+    Route::get('form', 'FormController@getForm')->name('form');
+    Route::post('form', 'FormController@postForm')->name('form');
+});
 
-// Route for form
-//Route::match(['get','post'],'form','FormController@execute')->name('form');
-Route::get('form','FormController@getForm')->name('form');
-Route::post('form','FormController@postForm')->name('form');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
-// Route to page with list of all members
-Route::get('list','ListController@execute')->name('list');
-
-// Route to page with description of thesis by {id} - speaker
-Route::get('page/{id}','PageController@execute')->name('page');

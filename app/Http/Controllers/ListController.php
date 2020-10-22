@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
-use App\Member;
+use App\Models\Entry;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use App\Services\Bitrix;
+use App\Models\Event;
+use App\Repositories\EventRepository;
+
 /**
  * Class ListController
  *
@@ -14,21 +18,26 @@ use App\Services\Bitrix;
  */
 class ListController extends Controller
 {
-    /**
-     * @return Application|Factory|View
-     */
-    public function execute()
+    protected $eventRepository;
+
+    public function __construct(EventRepository $eventRepository)
     {
-
-        if (view()->exists('layouts.list')) {
-
-            $members = Member::all();
-            $newBitrix = new Bitrix();
-            $membersStatusUpdate = $newBitrix->checkLeadStatus($members);
-            return view('layouts.list', array('members' => $membersStatusUpdate));
-
-        }
-
+        $this->eventRepository = $eventRepository;
     }
 
+    /**
+     * @param $eventId
+     * @return Entry|Factory|View
+     */
+    public function execute($eventId)
+    {
+        $event = $this->eventRepository->getById($eventId);
+        if (view()->exists('layouts.list')) {
+            $entries = $this->eventRepository->getEntriesByEventId($eventId);
+
+            $newBitrix = new Bitrix();
+            $entriesStatusUpdate = $newBitrix->checkLeadStatus($entries);
+            return view('layouts.list', ['entries' => $entriesStatusUpdate, 'eventId' => $eventId,'event' => $event]);
+        }
+    }
 }

@@ -138,7 +138,7 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [ 
+        'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
     ],
@@ -191,7 +191,7 @@ return [
         'available'             => 'Доступно',
         'size'                  => 'Размер',
         'lastname'             => 'Фамилия',
-        'emailAddress'          =>'E-mail',
+        'email'          =>'E-mail',
         'nameOfThesis'          => 'Тема доклада',
         'descriptionOfThesis'   => 'Краткое описание доклада',
         'department'   => 'Подразделение',

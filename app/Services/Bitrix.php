@@ -51,23 +51,23 @@ class Bitrix
     }
 
     /**
-     * @param $speakers
+     * @param $entries
      * @return mixed
      */
-    public function checkLeadStatus($speakers)
+    public function checkLeadStatus($entries)
     {
-        foreach ($speakers as $speaker) {
-            $leadInfo = $this->getLead($speaker->bitrixId);
+        foreach ($entries as $entry) {
+            $leadInfo = $this->getLead($entry->bitrix_id);
 
             if (isset($leadInfo['error'])) {
-                $speaker->bitrixId = null;
+                $entry->bitrix_id = null;
             } elseif ($leadInfo['result']['STATUS_ID'] == 'CONVERTED') {
-                $speaker->status = 1;
+                $entry->status = 1;
             }
 
         }
 
-        return $speakers;
+        return $entries;
     }
 
     /**

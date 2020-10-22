@@ -1,8 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use App\Http\Controllers\EventController;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -16,7 +18,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','lastname',
+        'phone','checkbox','department',
+        'nameOfThesis','descriptionOfThesis','status'
     ];
 
     /**
@@ -36,4 +40,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function entries(){
+        return $this->hasMany('App\Models\Entry','user_id','id');
+    }
 }

@@ -61,12 +61,12 @@
     <div class="form-group">
         <label for="email-field" class="col-xs-2 control-label"> E-mail </label>
 
-        @error('emailAddress')
+        @error('email')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <div class="col-xs-8">
-            <input type="text" name="emailAddress" value="{{ old('emailAddress') }}" id="email-field" placeholder="Введите e-mail" class="textbox">
+            <input type="text" name="email" value="{{ old('emailAddress') }}" id="email-field" placeholder="Введите e-mail" class="textbox">
         </div>
 
     </div>

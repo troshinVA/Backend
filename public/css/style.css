@@ -4,11 +4,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    max-width: 100%;
+    max-width: 80%;
     position: relative;
-    left: 0%;
-
+    left:15%;
     color: #000;
 
 }
@@ -18,7 +16,7 @@ h1 {
 }
 
 body {
-    background: rgba(133, 103, 214, 0.5);
+    background: rgb(241, 250, 238);
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -29,6 +27,13 @@ body {
 
 a {
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    color: rgb(241, 250, 238);
+}
+
+
+
+a:hover {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
     color: #000;
 }
 
@@ -38,7 +43,7 @@ form {
     box-sizing: border-box;
     padding: 40px;
     border-radius: 5px;
-    background: rgba(136, 119, 184, 0.3);
+    background: rgb(168, 218, 220);
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .45);
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .45);
 }
@@ -87,20 +92,49 @@ form {
 /* Базовые стили кнопки */
 .button {
     height: 50px;
-    width: 100%;
+    width: 30%;
     border-radius: 3px;
     border: rgba(0, 0, 0, .3) 0px solid;
     box-sizing: border-box;
     padding: 10px;
-    background: rgba(92, 65, 166, 0.8);
+    background: rgb(29, 53, 87);
     color: #FFF;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 16pt;
     transition: background .4s;
     cursor: pointer;
+    align-items: center;
+    margin:auto;
+    position: relative;
+    left: 35%;
+
 }
 
+.button.small{
+
+    height: 30px;
+    width: 7%;
+    font-weight: 200;
+    font-size: 10pt;
+    position: relative;
+    left: 85%;
+}
+
+.button.small.left{
+
+    height: 40px;
+    width: 20%;
+    font-weight: 300;
+    font-size: 12pt;
+    position: relative;
+    left: 0%;
+}
+
+.button.left {
+    position: relative;
+    left: -35%;
+}
 /* Изменение фона кнопки при наведении */
 .button:hover {
     background: #e8f6ff;
@@ -131,7 +165,7 @@ table {
     border-collapse: collapse;
     justify-content: center;
     align-items: center;
-    background: rgb(145, 125, 198);
+    background: rgb(168, 218, 220);
     margin: auto;
 }
 
@@ -152,12 +186,13 @@ table tr {
 
 
 .row {
-    background: rgba(107, 76, 190, 0.6);
+    background: rgb(69, 123, 157);
 }
 
 
 .row:hover {
     background: #e8f6ff;
+    color: #000;
 }
 
 

@@ -1,37 +1,45 @@
- /*Страница статьи*/
+/*Страница статьи*/
 
 
-      * {
+/** {
     box-sizing: border-box;
     margin: 0;
-}
-body {
-    background: rgba(133, 103, 214,0.5) ;
-    font-family: 'Montserrat', sans-serif;
-    color: #606060;
+}*/
+
+/*body {
+    background: rgb(168, 218, 220);
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-}
+    font-weight: normal;
+    color: #000;
+    margin: 0;
+}*/
+
 .container {
 
     max-width: 960px;
     margin: 50px auto;
     padding: 0 15px;
-    background: rgba(136, 119, 184,0.3);
+    background: rgb(241, 250, 238);
 }
-.post-content{
 
-    color:#000;
+.post-content {
+
+    color: #000;
 
 }
+
 .post-image img {
     width: 100%;
     margin: 0 0 20px 0;
 }
+
 .post h1 {
     color: #222;
     font-weight: 600;
     margin-bottom: 30px;
 }
+
 .post-meta {
     margin-bottom: 30px;
     display: flex;
@@ -44,6 +52,7 @@ time,
     padding-right: 26px;
     position: relative;
 }
+
 time:after,
 .author:after {
     content: "";
@@ -56,35 +65,10 @@ time:after,
     right: 10px;
     transform: translateY(-50%);
 }
+
 p {
     line-height: 1.5;
     margin-bottom: 1em;
-}
-
-a {
-    text-decoration: none; /* Отменяем подчеркивание у ссылки */
-    color:#000;
-   }
-
-.button {
-  height:50px;
-  width:100%;
-  border-radius:3px;
-  border:rgba(0,0,0,.3) 0 solid;
-  box-sizing:border-box;
-  padding:10px;
-  background:rgba(92, 65, 166,0.8);
-  color:#FFF;
-  font-family: 'Open Sans', sans-serif;
-  font-weight:400;
-  font-size: 16pt;
-  transition:background .4s;
-  cursor:pointer;
-}
-/* Изменение фона кнопки при наведении */
-.button:hover{
-  background: #e8f6ff;
-  color:#000;
 }
 
 
@@ -92,17 +76,20 @@ a {
     body {
         font-size: 16px;
     }
+
     .container {
-        background: rgba(136, 119, 184,0.3);
+        background: rgba(136, 119, 184, 0.3);
         padding: 0 45px;
-        -webkit-box-shadow:  0 0 15px 0 rgba(0, 0, 0, .45);
-        box-shadow:  0 0 15px 0 rgba(0, 0, 0, .45);
+        -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, .45);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, .45);
     }
+
     .post-image img {
         float: right;
         width: 300px;
         margin: 0 0 20px 20px;
     }
+
     .post-header {
         padding-left: 26px;
         border-left: 4px solid #D8D8D8;

@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventUser;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use App\Services\Bitrix;
-use App\Member;
+use App\Models\Entry;
 use App\Http\Requests\FormValidation;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use App\Helpers\BitrixHelper;
+use App\Models\Event;
+use App\Repositories\EventRepository;
 
 /**
  * Class FormController
@@ -18,33 +22,50 @@ use App\Helpers\BitrixHelper;
  */
 class FormController extends Controller
 {
+    protected $eventRepository;
+
+    public function __construct(EventRepository $eventRepository)
+    {
+        $this->eventRepository = $eventRepository;
+    }
 
     /**
+     * @param $eventId
      * @return Application|Factory|View
      */
-    public function getForm()
+    public function getForm($eventId)
     {
-        return view('layouts.form');
+        if (Auth::check()){
+            $user = Auth::user();
+        }else{
+            $user = null;
+        }
+        $events = $this->eventRepository->all();
+        $eventTitles = $this->eventRepository->getTitlesOfEvents($events);
+        return view('layouts.form', ['events' => $eventTitles, 'eventId' => $eventId,'user' => $user]);
     }
 
     /**
      * @param FormValidation $request
+     * @param $eventId
      * @return RedirectResponse
      */
-    public function postForm(FormValidation $request)
+    public function postForm(FormValidation $request, $eventId)
     {
         $input = $request->except('_token');
         $request->validated();
-        $member = new Member();
-        $member->fill($input);
+        $entry = new Entry();
+        $entry->fill($input);
+        if (Auth::check()){
+            $entry->user_id = Auth::user()->id;
+        }
 
-        $dataAddLead = BitrixHelper::setDataAddLead($member);
+        $dataAddLead = BitrixHelper::setDataAddLead($entry);
         $newBitrix = new Bitrix;
-        $member->bitrixId = strval($newBitrix->addLead($dataAddLead));
+        $entry->bitrix_id = strval($newBitrix->addLead($dataAddLead));
 
-        if ($member->save()) {
-
-            return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
+        if ($entry->save()) {
+            return redirect()->route('event', ['eventId' => $eventId])->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
         }
     }
 }

@@ -1,31 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Event;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use App\Member;
-use Illuminate\View\View;
-use App\Services\Bitrix;
-
-/**
- * Class IndexController
- *
- * @package App\Http\Controllers
- */
 class IndexController extends Controller
 {
-    /**
-     * @return Application|Factory|View
-     */
-    public function execute()
+
+    public function index()
     {
-
-        $speakers = Member::all();
-        $newBitrix = new Bitrix();
-        $speakersStatusUpdate = $newBitrix->checkLeadStatus($speakers);
-
-        return view('layouts.main', array('speakers' => $speakersStatusUpdate));
-
+        $events = Event::all();
+        return view('layouts.main',array('events'=>$events));
     }
+
 }

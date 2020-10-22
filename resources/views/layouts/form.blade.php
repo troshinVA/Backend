@@ -14,7 +14,7 @@
 
 <!-- Форма регистрации  -->
 
-{!! Form::open(['url'=>route('form'),'class'=>'form-horizontal','method'=>'POST']) !!}
+{!! Form::open(['url'=>route('form',['eventId'=>$eventId]),'class'=>'form-horizontal','method'=>'POST']) !!}
 
 {{ csrf_field() }}
 
@@ -27,7 +27,12 @@
     @enderror
 
     <div class="col-xs-8">
-        {!! Form::text('name', old('name'),['class'=>'textbox','placeholder'=>'Введите имя','autofocus'=>'true']) !!}
+        @if($user != null)
+            {!! Form::text('name', old('name',$user->name),['class'=>'textbox','placeholder'=>'Введите имя','autofocus'=>'true']) !!}
+
+        @else
+            {!! Form::text('name', old('name'),['class'=>'textbox','placeholder'=>'Введите имя','autofocus'=>'true']) !!}
+        @endif
     </div>
 </div>
 
@@ -57,14 +62,18 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('emailAddress','E-mail',['class'=>'col-xs-2 control-label']) !!}
+    {!! Form::label('email','E-mail',['class'=>'col-xs-2 control-label']) !!}
 
-    @error('emailAddress')
+    @error('email')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
     <div class="col-xs-8">
-        {!! Form::text('emailAddress', old('emailAddress'),['class'=>'textbox','placeholder'=>'Введите e-mail']) !!}
+        @if ($user != null)
+            {!! Form::text('email', old('email',$user->email),['class'=>'textbox','placeholder'=>'Введите e-mail']) !!}
+        @else
+            {!! Form::text('email', old('email'),['class'=>'textbox','placeholder'=>'Введите e-mail']) !!}
+        @endif
     </div>
 </div>
 
@@ -78,6 +87,14 @@
 
     <div class="col-xs-8">
         {!! Form::text('phone', old('phone'),['class'=>'textbox','placeholder'=>'79XXXXXXXXX','type'=>'tel']) !!}
+    </div>
+</div>
+
+<div class="form-group">
+    {!! Form::label('event','Выберите конференцию',['class'=>'col-xs-2 control-label']) !!}
+
+    <div class="col-xs-8">
+        {!! Form::select('event_id', $events, $eventId,['class'=>'textbox']) !!}
     </div>
 </div>
 
@@ -116,12 +133,9 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
-
     {!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'message','placeholder'=>'Описание','id'=>'descriptionThesis']) !!}
 
-
 </div>
-
 
 <div>
     {!! Form::button('Регистрация',['class'=>'button','type'=>'submit']) !!}
@@ -130,7 +144,7 @@
 {!! Form::close() !!}
 
 
-<a class="button" href="{{ route('home')}}">Назад</a>
+<a class="button small left" href="{{ route('event',['eventId' => $eventId])}}">Назад</a>
 
 <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 

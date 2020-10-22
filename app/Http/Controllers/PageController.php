@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use App\Member;
+use App\Models\Entry;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Repositories\EntryRepository;
 
 /**
  * Class PageController
@@ -13,35 +17,26 @@ use Illuminate\View\View;
  */
 class PageController extends Controller
 {
-    /**
-     * @param  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|View
-     */
-    public function execute($id)
+    protected $entryRepository;
+
+    public function __construct(EntryRepository $entryRepository)
     {
+        $this->entryRepository = $entryRepository;
+    }
 
-        if (!$id) {
-
+    /**
+     * @param $eventId
+     * @param $pageId
+     * @return Application|Factory|View
+     */
+    public function execute($eventId, $pageId)
+    {
+        if (!$pageId) {
             abort(404);
-
         }
-
         if (view()->exists('layouts.page')) {
-
-            $page = Member::where('id', strip_tags($id))->first();
-
-            $data = [
-
-                'title' => $page->nameOfThesis,
-                'speaker' => $page->name . ' ' . $page->lastname,
-                'department' => $page->department,
-                'description' => $page->descriptionOfThesis,
-
-            ];
-
-            return view('layouts.page', $data);
-
+            $page = $this->entryRepository->getPageById($pageId);
+            return view('layouts.page', ['page' => $page, 'eventId' => $eventId]);
         }
-
     }
 }
