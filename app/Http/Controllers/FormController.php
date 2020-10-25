@@ -64,8 +64,10 @@ class FormController extends Controller
         $newBitrix = new Bitrix;
         $entry->bitrix_id = strval($newBitrix->addLead($dataAddLead));
 
-        if ($entry->save()) {
+        if ($entry->save() && !Auth::check()) {
             return redirect()->route('event', ['eventId' => $eventId])->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
+        } elseif ($entry->save() && Auth::check()) {
+            return redirect()->route('home')->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
         }
     }
 }
