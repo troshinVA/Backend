@@ -17,8 +17,15 @@ use App\Repositories\EntryRepository;
  */
 class PageController extends Controller
 {
+    /**
+     * @var EntryRepository
+     */
     protected $entryRepository;
 
+    /**
+     * PageController constructor.
+     * @param EntryRepository $entryRepository
+     */
     public function __construct(EntryRepository $entryRepository)
     {
         $this->entryRepository = $entryRepository;

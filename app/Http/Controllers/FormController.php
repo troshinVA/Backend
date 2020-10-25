@@ -35,14 +35,14 @@ class FormController extends Controller
      */
     public function getForm($eventId)
     {
-        if (Auth::check()){
+        if (Auth::check()) {
             $user = Auth::user();
-        }else{
+        } else {
             $user = null;
         }
         $events = $this->eventRepository->all();
         $eventTitles = $this->eventRepository->getTitlesOfEvents($events);
-        return view('layouts.form', ['events' => $eventTitles, 'eventId' => $eventId,'user' => $user]);
+        return view('layouts.form', ['events' => $eventTitles, 'eventId' => $eventId, 'user' => $user]);
     }
 
     /**
@@ -56,7 +56,7 @@ class FormController extends Controller
         $request->validated();
         $entry = new Entry();
         $entry->fill($input);
-        if (Auth::check()){
+        if (Auth::check()) {
             $entry->user_id = Auth::user()->id;
         }
 

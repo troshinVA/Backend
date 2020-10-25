@@ -18,8 +18,15 @@ use App\Repositories\EventRepository;
  */
 class ListController extends Controller
 {
+    /**
+     * @var EventRepository
+     */
     protected $eventRepository;
 
+    /**
+     * ListController constructor.
+     * @param EventRepository $eventRepository
+     */
     public function __construct(EventRepository $eventRepository)
     {
         $this->eventRepository = $eventRepository;
@@ -37,7 +44,7 @@ class ListController extends Controller
 
             $newBitrix = new Bitrix();
             $entriesStatusUpdate = $newBitrix->checkLeadStatus($entries);
-            return view('layouts.list', ['entries' => $entriesStatusUpdate, 'eventId' => $eventId,'event' => $event]);
+            return view('layouts.list', ['entries' => $entriesStatusUpdate, 'eventId' => $eventId, 'event' => $event]);
         }
     }
 }

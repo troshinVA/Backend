@@ -10,8 +10,8 @@ for (let rad of radio) {
         if (rad.value === '0') {
             visible.hidden = true;
             visible.disabled = true;
-             descriptionThesis.value = '';
-             nameThesis.value = '';
+            descriptionThesis.value = '';
+            nameThesis.value = '';
 
         } else {
             visible.hidden = false;

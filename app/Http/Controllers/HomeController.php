@@ -28,6 +28,6 @@ class HomeController extends Controller
         $user = Auth::user();
         $entries = $user->entries;
 
-        return view('home',['entries' => $entries]);
+        return view('home', ['entries' => $entries]);
     }
 }

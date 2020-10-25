@@ -5,9 +5,9 @@
     <div class="container">
         <h1 class="h1">{{$event->title}}</h1>
         <nav class="navbar">
-            <a href="{{ route('list',['eventId'=> $event->id]) }}"  class="btn btn-primary">
+            <a href="{{ route('list',['eventId'=> $event->id]) }}" class="btn btn-primary">
                 Список участников</a>
-            <a  href="{{ route('form',['eventId'=>$event->id]) }}" class="btn btn-success" >
+            <a href="{{ route('form',['eventId'=>$event->id]) }}" class="btn btn-success">
                 Хочу на конференцию!</a>
         </nav>
         <div class="card">

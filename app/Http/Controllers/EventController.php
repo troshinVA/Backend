@@ -9,6 +9,7 @@ use Illuminate\View\View;
 use App\Services\Bitrix;
 use App\Models\Event;
 use App\Repositories\EventRepository;
+
 /**
  * Class IndexController
  *

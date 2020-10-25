@@ -20,7 +20,8 @@
 
                                 <tr>
                                     <td class="table-info position-relative">
-                                        <a href="{{route('event',['eventId'=>$event->id])}}" class="stretched-link"> {{ $event->title }} </a>
+                                        <a href="{{route('event',['eventId'=>$event->id])}}"
+                                           class="stretched-link"> {{ $event->title }} </a>
                                     </td>
                                     <td>{{ $event->description }}</td>
                                 </tr>

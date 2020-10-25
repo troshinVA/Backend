@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Controllers\EventController;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -13,6 +14,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     use CanResetPassword;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -40,8 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-    public function entries(){
-        return $this->hasMany('App\Models\Entry','user_id','id');
+    /**
+     * @return HasMany
+     */
+    public function entries()
+    {
+        return $this->hasMany('App\Models\Entry', 'user_id', 'id');
     }
 }
