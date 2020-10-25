@@ -70,11 +70,11 @@
 
                         <div class="form-check">
                             {!! Form::radio('checkbox', '1' ,true,['class'=>'form-check-input','id'=>'radio1']) !!}
-                            {!! Form::label('checkbox','Хочу быть докладчиком!',['class'=>'form-check-label','for'=>'radio1']) !!}
+                            {!! Form::label('radio1','Хочу быть докладчиком!',['class'=>'form-check-label']) !!}
                         </div>
                         <div class="form-check">
                             {!! Form::radio('checkbox', '0' ,false,['class'=>'form-check-input','id'=>'radio2']) !!}
-                            {!! Form::label('checkbox',' Приду просто посмотреть',['class'=>'form-check-label','for'=>'radio2']) !!}
+                            {!! Form::label('radio2',' Приду просто посмотреть',['class'=>'form-check-label']) !!}
                         </div>
 
                         {!! Form::hidden('status' ,'0', ['class'=>'status','value'=>'0']) !!}
@@ -82,7 +82,7 @@
 
                         <br><br>
 
-                        <div class="visible" id="hidden">
+                        <div class="visible">
                             <div class="form-group">
                                 {!! Form::label('nameOfThesis','Тема доклада') !!}
                                 @error('nameOfThesis')
@@ -109,3 +109,4 @@
         </div>
     </div>
 @endsection
+

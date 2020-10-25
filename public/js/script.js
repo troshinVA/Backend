@@ -7,7 +7,6 @@ let descriptionThesis = document.querySelector('.form-control.textarea');
 for (let rad of radio) {
 
     rad.onclick = function () {
-        alert(rad);
         if (rad.value === '0') {
             visible.hidden = true;
             visible.disabled = true;

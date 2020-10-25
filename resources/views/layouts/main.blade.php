@@ -19,8 +19,8 @@
                             @foreach($events as $event)
 
                                 <tr>
-                                    <td>
-                                        <a href="{{route('event',['eventId'=>$event->id])}}"> {{ $event->title }} </a>
+                                    <td class="table-info position-relative">
+                                        <a href="{{route('event',['eventId'=>$event->id])}}" class="stretched-link"> {{ $event->title }} </a>
                                     </td>
                                     <td>{{ $event->description }}</td>
                                 </tr>

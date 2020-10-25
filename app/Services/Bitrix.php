@@ -58,7 +58,6 @@ class Bitrix
     {
         foreach ($entries as $entry) {
             $leadInfo = $this->getLead($entry->bitrix_id);
-
             if (isset($leadInfo['error'])) {
                 $entry->bitrix_id = null;
             } elseif ($leadInfo['result']['STATUS_ID'] == 'CONVERTED') {
@@ -79,7 +78,6 @@ class Bitrix
     {
         $queryData = http_build_query($queryDataInput);
         $queryUrl = env('BITRIX_URL') . $action;
-
         $curl = curl_init();
         curl_setopt_array(
             $curl, array(
