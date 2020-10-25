@@ -3,9 +3,11 @@
 <head>
 
     <meta charset="utf-8">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/page_style.css') }}" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="{{ asset('js/form.js') }}"></script>
+{{--    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">--}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/page_style.css') }}" rel="stylesheet" type="text/css">--}}
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     <title>Конференция 2020</title>
 
     {{--    favicon    --}}
@@ -32,7 +34,8 @@
 
     </nav>
 @endif
-
+<main>
 @yield('content')
+</main>
 </body>
 </html>

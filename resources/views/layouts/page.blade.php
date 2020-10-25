@@ -1,26 +1,22 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
-<main>
-    <button class="button small left"><a href="{{ route('event',['eventId'=>(int)$eventId]) }}"> Вернуться к списку</a></button>
-    <div class="container">
-        <div class="post">
-            <div>
-                <div class="post-header">
+    <main>
+        <a href="{{ route('event',['eventId'=>(int)$eventId]) }}" class="btn btn-primary"> Вернуться к списку</a>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
                     <h1>{{ $page->nameOfThesis }}</h1>
-                    <div class="post-meta">
-                        <span class="author">{{ $page->name . ' ' . $page->lastname }}</span>
-                        <span class="category">{{ $page->department}}</span>
-                    </div>
+                    <span class="author">{{ $page->name . ' ' . $page->lastname }}</span>
+                    <span class="category">{{ $page->department}}</span>
                 </div>
-                <p class="post-content">{{ $page->descriptionOfThesis }}
-                </p>
+                <div class="card-body">
+                    <p class="post-content">{{ $page->descriptionOfThesis }}</p>
+                </div>
             </div>
+
         </div>
-    </div>
-
-
-</main>
+    </main>
 
 @endsection
 

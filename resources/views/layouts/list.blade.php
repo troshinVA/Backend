@@ -1,45 +1,33 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
-<header>
-    <h1>{{$event->title}}</h1>
-</header>
-
-<main>
-
-    <button class="button"><a href="{{ route('event',['eventId'=>$eventId]) }}">Список докладчиков</a></button> {{--<br> <br>--}}
-
-{{--    <button class="button"><a href="{{ route('form') }}">Хочу на конференцию!</a></button>--}}
-
-    <br><br>
-
-    <div>
-
-        <table border="1">
-            <h2>Участники конференции</h2>
-
-            <tr>
-                <th>Участник</th>
-
-                <th>Подразделение</th>
-            </tr>
-
-            @if(isset($entries) && is_object($entries))
-
-                @foreach($entries as $entry)
-                    @if($entry->bitrix_id !== null)
+    <div class="container">
+        <h1>{{$event->title}}</h1>
+        <nav class="navbar">
+            <a href="{{ route('event',['eventId'=>$eventId]) }}" class="btn btn-primary stretched-link">Список
+                докладчиков</a>
+        </nav>
+        <div class="card">
+            <div class="card-header"><h4>Участники конференции</h4></div>
+            <div class="card-body">
+                <table class="table">
                     <tr>
-                        <td>{{$entry->name}} {{$entry->lastname}}</td>
-                        <td>{{ $entry->department }}</td>
+                        <th>Участник</th>
+                        <th>Подразделение</th>
                     </tr>
+
+                    @if(isset($entries) && is_object($entries))
+                        @foreach($entries as $entry)
+                            @if($entry->bitrix_id !== null)
+                                <tr>
+                                    <td>{{$entry->name}} {{$entry->lastname}}</td>
+                                    <td>{{ $entry->department }}</td>
+                                </tr>
+                            @endif
+                        @endforeach
                     @endif
-                @endforeach
-
-            @endif
-
-        </table>
-
+                </table>
+            </div>
+        </div>
     </div>
-</main>
-
 @endsection

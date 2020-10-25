@@ -1,13 +1,13 @@
 // radio buttons script
-let radio = document.querySelectorAll('.radio');
+let radio = document.querySelectorAll('.form-check-input');
 let visible = document.querySelector('.visible');
-let nameThesis = document.querySelector('.textbox.here');
-let descriptionThesis = document.querySelector('.message');
+let nameThesis = document.querySelector('.form-control.text');
+let descriptionThesis = document.querySelector('.form-control.textarea');
 
 for (let rad of radio) {
 
     rad.onclick = function () {
-
+        alert(rad);
         if (rad.value === '0') {
             visible.hidden = true;
             visible.disabled = true;

@@ -1,42 +1,39 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
-<header>
-    <h1>Доступные конференции</h1>
+    <main>
 
-</header>
+        <div class="container">
+            <h1>Доступные конференции</h1>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
 
-<main>
+                        <tr>
+                            <th>Название</th>
+                            <th>Описание</th>
+                        </tr>
 
-    <div>
+                        @if(isset($events) && is_object($events))
 
-        <table border="1">
-            <h2></h2><br>
+                            @foreach($events as $event)
 
-            <tr>
-                <th>Название</th>
-                <th>Описание</th>
-            </tr>
+                                <tr>
+                                    <td>
+                                        <a href="{{route('event',['eventId'=>$event->id])}}"> {{ $event->title }} </a>
+                                    </td>
+                                    <td>{{ $event->description }}</td>
+                                </tr>
 
-            @if(isset($events) && is_object($events))
+                            @endforeach
 
-                @foreach($events as $event)
+                        @endif
 
-                    <tr>
-                        <td class="row">
-                            <a href="{{route('event',['eventId'=>$event->id])}}"> {{ $event->title }} </a>
-                        </td>
-                        <td>{{ $event->description }}</td>
-                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-                @endforeach
-
-            @endif
-
-        </table>
-
-    </div>
-
-</main>
+    </main>
 
 @endsection
