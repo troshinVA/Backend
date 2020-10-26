@@ -20,7 +20,7 @@
                 @if (count($entries)==0)
                     <div>Пока что у вас нет ни одной заявки на конференцию(</div>
                 @else
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-responsive">
                         <tr>
                             <th class="thead-default">Название</th>
                             <th class="thead-default">Описание</th>
