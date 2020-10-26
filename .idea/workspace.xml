@@ -21,11 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="84772ba2-6b7f-48e3-99d4-23a5af5e682a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EntryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EntryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EventRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EventRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +239,7 @@
       <workItem from="1603525035811" duration="6632000" />
       <workItem from="1603612239284" duration="16434000" />
       <workItem from="1603692648017" duration="5619000" />
-      <workItem from="1603699841243" duration="146000" />
+      <workItem from="1603699841243" duration="844000" />
     </task>
     <servers />
   </component>
