@@ -97,17 +97,17 @@
 
                         <div class="visible">
                             <div class="form-group">
-                                {!! Form::label('nameOfThesis','Тема доклада') !!}
-                                @error('nameOfThesis')
+                                {!! Form::label('thesisName','Тема доклада') !!}
+                                @error('thesisName')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                {!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'form-control text','placeholder'=>'Тема доклада']) !!}
+                                {!! Form::text('thesisName',old('thesisName'),['class'=>'form-control text','placeholder'=>'Тема доклада']) !!}
 
                                 {!! Form::label('thesisDescription','Краткое описание доклада') !!}
                                 @error('thesisDescription')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                {!! Form::textarea('thesisDescription', old('descriptionOfThesis'),['class'=>'form-control textarea','placeholder'=>'Описание','id'=>'descriptionThesis']) !!}
+                                {!! Form::textarea('thesisDescription', old('thesisDescription'),['class'=>'form-control textarea','placeholder'=>'Описание','id'=>'descriptionThesis']) !!}
                             </div>
                         </div>
 
