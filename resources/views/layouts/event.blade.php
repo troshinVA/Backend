@@ -38,8 +38,8 @@
                                 </tr>
                             @elseif ($entry->thesisName !== null && $entry->bitrixLeadId !== null)
                                 <tr>
-                                    <td class="table-info">
-                                        <a href="{{route('page',['pageId'=>$entry->id,'eventId'=>$event->id])}}"> {{ $entry->thesisName }} </a>
+                                    <td class="table-info position-relative">
+                                        <a class="stretched-link" href="{{route('page',['pageId'=>$entry->id,'eventId'=>$event->id])}}"> {{ $entry->thesisName }} </a>
                                     </td>
                                     <td>{{$entry->name}} {{$entry->lastname}}</td>
                                     <td>{{ $entry->department }}</td>

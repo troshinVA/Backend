@@ -15,7 +15,6 @@
                         <th>Участник</th>
                         <th>Подразделение</th>
                     </tr>
-
                     @if(isset($entries) && is_object($entries))
                         @foreach($entries as $entry)
                             @if($entry->bitrixLeadId !== null)

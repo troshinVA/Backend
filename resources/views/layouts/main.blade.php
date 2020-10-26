@@ -15,7 +15,7 @@
                         @if(isset($events) && is_object($events))
                             @foreach($events as $event)
                                 <tr>
-                                    <td class="table-info">
+                                    <td class="table-info position-relative">
                                         <a href="{{route('event',['eventId'=>$event->id])}}"
                                            class="stretched-link"> {{ $event->title }} </a>
                                     </td>
@@ -27,7 +27,5 @@
                 </div>
             </div>
         </div>
-
     </main>
-
 @endsection
