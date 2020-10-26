@@ -5,6 +5,9 @@
     <div class="container">
         <h1 class="h1">{{$event->title}}</h1>
         <nav class="navbar">
+            <a href="{{ route('main') }}" class="btn btn-primary">Назад к выбору конференций</a>
+        </nav>
+        <nav class="navbar">
             <a href="{{ route('list',['eventId'=> $event->id]) }}" class="btn btn-primary">
                 Список участников</a>
             <a href="{{ route('form',['eventId'=>$event->id]) }}" class="btn btn-success">
@@ -56,7 +59,5 @@
             <p>{{ Session::get('status') }}</p>
         </div>
     @endif
-    <br>
-    <a href="{{ route('main') }}" class="btn btn-primary">Назад к выбору конференций</a> <br>
 @endsection
 

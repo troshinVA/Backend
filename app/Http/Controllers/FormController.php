@@ -77,12 +77,12 @@ class FormController extends Controller
         $entry->bitrixLeadId = strval($bitrix->addLead($addLeadData));
 
         if (!Auth::check()){
-            $redirect = redirect()->route('event', ['eventId' => $eventId]);
+            $route = redirect()->route('event', ['eventId' => $eventId]);
         }else{
-            $redirect = redirect()->route('home');
+            $route = redirect()->route('home');
         }
         if ($entry->save()){
-            $redirect->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
+           return $route->with('status', 'Спасибо, Вы зарегистрированы на конференцию');
         }
     }
 }
