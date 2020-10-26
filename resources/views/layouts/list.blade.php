@@ -18,7 +18,7 @@
 
                     @if(isset($entries) && is_object($entries))
                         @foreach($entries as $entry)
-                            @if($entry->bitrix_id !== null)
+                            @if($entry->bitrixLeadId !== null)
                                 <tr>
                                     <td>{{$entry->name}} {{$entry->lastname}}</td>
                                     <td>{{ $entry->department }}</td>

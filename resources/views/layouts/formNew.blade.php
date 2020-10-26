@@ -87,12 +87,12 @@
     <div class="form-group">
         <div class="col-xs-8">
             <label for="radio1">Хочу быть докладчиком!</label>
-            <input type="radio" value="1" name="checkbox" id="radio1" class="radio" checked>
+            <input type="radio" value="1" name="isThesis" id="radio1" class="radio" checked>
         </div>
 
         <div class="col-xs-8">
             <label for="radio2">Приду просто посмотреть</label>
-            <input type="radio" value="0" name="checkbox" id="radio2" class="radio">
+            <input type="radio" value="0" name="isThesis" id="radio2" class="radio">
         </div>
 
 
@@ -114,12 +114,12 @@
 
         <label for="description-field" class="col-xs-2 control-label">Описание доклада</label>
 
-        @error('descriptionOfThesis')
+        @error('thesisDescription')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <textarea type="text" rows=7 class="message"  id="description-field" name="descriptionOfThesis">
-          {{ old('descriptionOfThesis') }}  </textarea>
+        <textarea type="text" rows=7 class="message"  id="description-field" name="thesisDescription">
+          {{ old('thesisDescription') }}  </textarea>
 
     </div>
 

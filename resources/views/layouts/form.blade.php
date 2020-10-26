@@ -82,11 +82,11 @@
                         </div>
 
                         <div class="form-check">
-                            {!! Form::radio('checkbox', '1' ,true,['class'=>'form-check-input','id'=>'radio1']) !!}
+                            {!! Form::radio('isThesis', '1' ,true,['class'=>'form-check-input','id'=>'radio1']) !!}
                             {!! Form::label('radio1','Хочу быть докладчиком!',['class'=>'form-check-label']) !!}
                         </div>
                         <div class="form-check">
-                            {!! Form::radio('checkbox', '0' ,false,['class'=>'form-check-input','id'=>'radio2']) !!}
+                            {!! Form::radio('isThesis', '0' ,false,['class'=>'form-check-input','id'=>'radio2']) !!}
                             {!! Form::label('radio2',' Приду просто посмотреть',['class'=>'form-check-label']) !!}
                         </div>
 
@@ -103,11 +103,11 @@
                                 @enderror
                                 {!! Form::text('nameOfThesis',old('nameOfThesis'),['class'=>'form-control text','placeholder'=>'Тема доклада']) !!}
 
-                                {!! Form::label('descriptionOfThesis','Краткое описание доклада') !!}
-                                @error('descriptionOfThesis')
+                                {!! Form::label('thesisDescription','Краткое описание доклада') !!}
+                                @error('thesisDescription')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                {!! Form::textarea('descriptionOfThesis', old('descriptionOfThesis'),['class'=>'form-control textarea','placeholder'=>'Описание','id'=>'descriptionThesis']) !!}
+                                {!! Form::textarea('thesisDescription', old('descriptionOfThesis'),['class'=>'form-control textarea','placeholder'=>'Описание','id'=>'descriptionThesis']) !!}
                             </div>
                         </div>
 

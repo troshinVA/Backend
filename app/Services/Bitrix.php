@@ -57,9 +57,9 @@ class Bitrix
     public function checkLeadStatus($entries)
     {
         foreach ($entries as $entry) {
-            $leadInfo = $this->getLead($entry->bitrix_id);
+            $leadInfo = $this->getLead($entry->bitrixLeadId);
             if (isset($leadInfo['error'])) {
-                $entry->bitrix_id = null;
+                $entry->bitrixLeadId = null;
             } elseif ($leadInfo['result']['STATUS_ID'] == 'CONVERTED') {
                 $entry->status = 1;
             }

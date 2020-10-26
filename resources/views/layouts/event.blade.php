@@ -24,19 +24,19 @@
 
                         @foreach($entries as $entry)
 
-                            @if ($entry->status === 0 && $entry->nameOfThesis !== null && $entry->bitrix_id !== null)
+                            @if ($entry->status === 0 && $entry->thesisName !== null && $entry->bitrixLeadId !== null)
 
                                 <tr class="table-active">
                                     <td>
-                                        {{ $entry->nameOfThesis }}
+                                        {{ $entry->thesisName }}
                                     </td>
                                     <td>{{$entry->name}} {{$entry->lastname}}</td>
                                     <td>{{ $entry->department }}</td>
                                 </tr>
-                            @elseif ($entry->nameOfThesis !== null && $entry->bitrix_id !== null)
+                            @elseif ($entry->thesisName !== null && $entry->bitrixLeadId !== null)
                                 <tr>
                                     <td class="table-info">
-                                        <a href="{{route('page',['pageId'=>$entry->id,'eventId'=>$event->id])}}"> {{ $entry->nameOfThesis }} </a>
+                                        <a href="{{route('page',['pageId'=>$entry->id,'eventId'=>$event->id])}}"> {{ $entry->thesisName }} </a>
                                     </td>
                                     <td>{{$entry->name}} {{$entry->lastname}}</td>
                                     <td>{{ $entry->department }}</td>

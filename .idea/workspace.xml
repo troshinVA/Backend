@@ -21,7 +21,29 @@
   <component name="ChangeListManager">
     <list default="true" id="84772ba2-6b7f-48e3-99d4-23a5af5e682a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/BitrixHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/BitrixHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FormValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FormValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/EventRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EventRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Bitrix.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Bitrix.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_134605_create_table_entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_134605_create_table_entries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/EntriesSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ru/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/event.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/event.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/formNew.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/formNew.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/notes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/page.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +261,7 @@
       <workItem from="1603525035811" duration="6632000" />
       <workItem from="1603612239284" duration="16434000" />
       <workItem from="1603692648017" duration="5619000" />
-      <workItem from="1603699841243" duration="1162000" />
+      <workItem from="1603699841243" duration="8409000" />
     </task>
     <servers />
   </component>
@@ -342,10 +364,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1601033962041" />
-    <state x="478" y="0" width="579" height="824" key="find.popup" timestamp="1603371815252">
+    <state x="478" y="0" width="579" height="824" key="find.popup" timestamp="1603709137679">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="0" width="579" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1603371815252" />
+    <state x="478" y="0" width="579" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1603709137679" />
     <state x="486" y="184" key="refactoring.ChangeSignatureDialog" timestamp="1602839839990">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

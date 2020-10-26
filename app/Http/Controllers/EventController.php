@@ -40,8 +40,8 @@ class EventController extends Controller
     {
         $event = $this->eventRepository->getById($eventId);
         $entries = $this->eventRepository->getEntriesByEventId($eventId);
-        $newBitrix = new Bitrix();
-        $entriesStatusUpdate = $newBitrix->checkLeadStatus($entries);
-        return view('layouts.event', array('event' => $event, 'entries' => $entriesStatusUpdate));
+        $bitrix = new Bitrix();
+        $entriesStatus = $bitrix->checkLeadStatus($entries);
+        return view('layouts.event', array('event' => $event, 'entries' => $entriesStatus));
     }
 }

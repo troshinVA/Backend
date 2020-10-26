@@ -40,9 +40,6 @@ class EventRepository
      */
     public function getTitlesOfEvents($events)
     {
-        foreach ($events as $event) {
-            $eventTitles[] = [$event->id => $event->title];
-        }
-        return $eventTitles;
+        return $events->pluck('title','id');
     }
 }

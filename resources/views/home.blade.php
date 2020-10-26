@@ -28,7 +28,7 @@
                             <th class="thead-default">Статус заявки</th>
                         </tr>
                         @foreach($entries as $entry)
-                            @if ($entry->status === 0 && $entry->bitrix_id !== null)
+                            @if ($entry->status === 0 && $entry->bitrixLeadId !== null)
                                 <tr class="table-active">
                                     <td>
                             @else
@@ -38,16 +38,16 @@
                                         <a href="{{route('event',['eventId'=>$entry->events->id])}}"> {{ $entry->events->title }} </a>
                                     </td>
 
-                            @if ($entry->nameOfThesis != null)
+                            @if ($entry->thesisName != null)
                                 <td>Вы зарегестрированы с докладом на
-                                    тему: {{$entry->nameOfThesis}} </td>
+                                    тему: {{$entry->thesisName}} </td>
                                 <td>Докладчик</td>
                             @else
                                 <td>{{ $entry->events->description }}</td>
                                 <td>Зритель</td>
                             @endif
 
-                            @if($entry->status === 0 && $entry->bitrix_id !== null)
+                            @if($entry->status === 0 && $entry->bitrixLeadId !== null)
                                 <td>Заявка в обработке</td>
                             @else
                                 <td>Заявка принята</td>

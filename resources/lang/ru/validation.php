@@ -192,8 +192,8 @@ return [
         'size'                  => 'Размер',
         'lastname'             => 'Фамилия',
         'email'          =>'E-mail',
-        'nameOfThesis'          => 'Тема доклада',
-        'descriptionOfThesis'   => 'Краткое описание доклада',
+        'thesisName'          => 'Тема доклада',
+        'thesisDescription'   => 'Краткое описание доклада',
         'department'   => 'Подразделение',
     ],
 ];

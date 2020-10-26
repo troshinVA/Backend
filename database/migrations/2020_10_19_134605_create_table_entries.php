@@ -20,11 +20,11 @@ class CreateTableEntries extends Migration
             $table->string('email', 100);
             $table->string('phone');
             $table->string('department', 100);
-            $table->boolean('checkbox');
-            $table->string('nameOfThesis', 255)->nullable();
-            $table->text('descriptionOfThesis')->nullable();
+            $table->boolean('isThesis');
+            $table->string('thesisName', 255)->nullable();
+            $table->text('thesisDescription')->nullable();
             $table->boolean('status')->nullable()->default(0);
-            $table->string('bitrix_id')->nullable();
+            $table->string('bitrixLeadId')->nullable();
 
             $table->foreignId('event_id')->default(1);
             $table->foreign('event_id')->references('id')->on('events');

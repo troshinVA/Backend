@@ -28,8 +28,8 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $entries = $user->entriesByEmail;
-        $newBitrix = new Bitrix();
-        $entriesStatusUpdate = $newBitrix->checkLeadStatus($entries);
-        return view('home', ['entries' => $entriesStatusUpdate]);
+        $bitrix = new Bitrix();
+        $entriesStatus = $bitrix->checkLeadStatus($entries);
+        return view('home', ['entries' => $entriesStatus]);
     }
 }

@@ -24,25 +24,19 @@ class FormValidation extends FormRequest
      */
     public function rules()
     {
-
         $rules = [
-
             'name' => 'required|max:255',
             'lastname' => 'required|max:255',
             'department' => 'required|max:255',
             'email' => 'required|email',
             'phone' => 'required|max:11|min:11|regex:/(79)[0-9]{9}/',
-
         ];
-        //        dd($this->validationData());
-        if ($this->validationData()['checkbox'] == 1) {
-
+        if ($this->validationData()['isThesis'] == 1) {
             $rules = array_merge(
                 $rules, [
-                    'nameOfThesis' => 'required|max:500',
-                    'descriptionOfThesis' => 'required|max:1000']
+                    'thesisName' => 'required|max:500',
+                    'thesisDescription' => 'required|max:1000']
             );
-
         }
         return $rules;
     }

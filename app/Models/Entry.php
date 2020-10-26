@@ -17,8 +17,8 @@ class Entry extends Model
      * @var string[]
      */
     protected $fillable = ['name', 'lastname',
-        'email', 'phone', 'checkbox', 'department',
-        'nameOfThesis', 'descriptionOfThesis', 'status', 'event_id', 'user_id'];
+        'email', 'phone', 'isThesis', 'department',
+        'thesisName', 'thesisDescription', 'status', 'event_id', 'user_id'];
 
     /**
      * @return BelongsTo

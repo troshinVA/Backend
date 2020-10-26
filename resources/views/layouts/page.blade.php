@@ -6,12 +6,12 @@
         <div class="container">
             <div class="card">
                 <div class="card-header">
-                    <h1>{{ $page->nameOfThesis }}</h1>
+                    <h1>{{ $page->thesisName }}</h1>
                     <span class="author">{{ $page->name . ' ' . $page->lastname }}</span>
                     <span class="category">{{ $page->department}}</span>
                 </div>
                 <div class="card-body">
-                    <p class="post-content">{{ $page->descriptionOfThesis }}</p>
+                    <p class="post-content">{{ $page->thesisDescription }}</p>
                 </div>
             </div>
 

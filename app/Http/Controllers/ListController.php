@@ -43,9 +43,9 @@ class ListController extends Controller
         if (view()->exists('layouts.list')) {
             $entries = $this->eventRepository->getEntriesByEventId($eventId);
 
-            $newBitrix = new Bitrix();
-            $entriesStatusUpdate = $newBitrix->checkLeadStatus($entries);
-            return view('layouts.list', ['entries' => $entriesStatusUpdate, 'eventId' => $eventId, 'event' => $event]);
+            $bitrix = new Bitrix();
+            $entriesStatus = $bitrix->checkLeadStatus($entries);
+            return view('layouts.list', ['entries' => $entriesStatus, 'eventId' => $eventId, 'event' => $event]);
         }
     }
 }
