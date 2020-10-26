@@ -50,6 +50,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Entry', 'user_id', 'id');
     }
 
+    /**
+     * @return HasMany
+     */
     public function entriesByEmail()
     {
         return $this->hasMany('App\Models\Entry', 'email', 'email');

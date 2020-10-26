@@ -17,6 +17,9 @@ use App\Repositories\EventRepository;
  */
 class EventController extends Controller
 {
+    /**
+     * @var EventRepository
+     */
     protected $eventRepository;
 
     /**

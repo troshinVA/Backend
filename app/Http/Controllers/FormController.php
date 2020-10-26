@@ -22,8 +22,15 @@ use App\Repositories\EventRepository;
  */
 class FormController extends Controller
 {
+    /**
+     * @var EventRepository
+     */
     protected $eventRepository;
 
+    /**
+     * FormController constructor.
+     * @param EventRepository $eventRepository
+     */
     public function __construct(EventRepository $eventRepository)
     {
         $this->eventRepository = $eventRepository;

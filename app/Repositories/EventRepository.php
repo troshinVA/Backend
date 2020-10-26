@@ -16,16 +16,28 @@ class EventRepository
         return Event::all();
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getById($id)
     {
         return Event::find((int)$id);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getEntriesByEventId($id)
     {
         return Event::find((int)$id)->entries;
     }
 
+    /**
+     * @param $events
+     * @return mixed
+     */
     public function getTitlesOfEvents($events)
     {
         foreach ($events as $event) {
