@@ -21,6 +21,7 @@ class EventController extends Controller
 
     /**
      * EventController constructor.
+     *
      * @param EventRepository $eventRepository
      */
     public function __construct(EventRepository $eventRepository)
@@ -29,7 +30,7 @@ class EventController extends Controller
     }
 
     /**
-     * @param $eventId
+     * @param  $eventId
      * @return Application|Factory|View
      */
     public function execute($eventId)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Bitrix;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,8 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $entries = $user->entries;
-
-        return view('home', ['entries' => $entries]);
+        $entries = $user->entriesByEmail;
+        $newBitrix = new Bitrix();
+        $entriesStatusUpdate = $newBitrix->checkLeadStatus($entries);
+        return view('home', ['entries' => $entriesStatusUpdate]);
     }
 }

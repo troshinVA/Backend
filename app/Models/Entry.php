@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * Class Member
  *
  * @property name
- * @package App
+ * @package  App
  */
 class Entry extends Model
 {

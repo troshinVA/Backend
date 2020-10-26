@@ -24,6 +24,7 @@ class PageController extends Controller
 
     /**
      * PageController constructor.
+     *
      * @param EntryRepository $entryRepository
      */
     public function __construct(EntryRepository $entryRepository)
@@ -32,8 +33,8 @@ class PageController extends Controller
     }
 
     /**
-     * @param $eventId
-     * @param $pageId
+     * @param  $eventId
+     * @param  $pageId
      * @return Application|Factory|View
      */
     public function execute($eventId, $pageId)

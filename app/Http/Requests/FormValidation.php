@@ -20,7 +20,6 @@ class FormValidation extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     *
      * @return array
      */
     public function rules()
@@ -35,7 +34,7 @@ class FormValidation extends FormRequest
             'phone' => 'required|max:11|min:11|regex:/(79)[0-9]{9}/',
 
         ];
-//        dd($this->validationData());
+        //        dd($this->validationData());
         if ($this->validationData()['checkbox'] == 1) {
 
             $rules = array_merge(

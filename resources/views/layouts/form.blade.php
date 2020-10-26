@@ -16,8 +16,8 @@
                             @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            @if($user != null)
-                                {!! Form::text('name', old('name',$user->name),['class'=>'form-control','placeholder'=>'Введите имя','autofocus'=>'true']) !!}
+                            @if(isset($userData->name))
+                                {!! Form::text('name', old('name',$userData->name),['class'=>'form-control','placeholder'=>'Введите имя','autofocus'=>'true']) !!}
                             @else
                                 {!! Form::text('name', old('name'),['class'=>'form-control','placeholder'=>'Введите имя','autofocus'=>'true']) !!}
                             @endif
@@ -28,7 +28,12 @@
                             @error('lastname')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            {!! Form::text('lastname', old('lastname'),['class'=>'form-control','placeholder'=>'Введите фамилию']) !!}
+
+                            @if(isset($userData->lastname))
+                                {!! Form::text('lastname', old('lastname',$userData->lastname),['class'=>'form-control','placeholder'=>'Введите фамилию']) !!}
+                            @else
+                                {!! Form::text('lastname', old('lastname'),['class'=>'form-control','placeholder'=>'Введите фамилию']) !!}
+                            @endif
                         </div>
 
                         <div class="form-group">
@@ -36,7 +41,11 @@
                             @error('department')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            {!! Form::text('department', old('department'),['class'=>'form-control','placeholder'=>'Название подразделения']) !!}
+                            @if (isset($userData->department))
+                                {!! Form::text('department', old('department',$userData->department),['class'=>'form-control','placeholder'=>'Название подразделения']) !!}
+                            @else
+                                {!! Form::text('department', old('department'),['class'=>'form-control','placeholder'=>'Название подразделения']) !!}
+                            @endif
                         </div>
 
                         <div class="form-group">
@@ -44,8 +53,8 @@
                             @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            @if ($user != null)
-                                {!! Form::text('email', old('email',$user->email),['class'=>'form-control','placeholder'=>'Введите e-mail']) !!}
+                            @if (isset($userData->email))
+                                {!! Form::text('email', old('email',$userData->email),['class'=>'form-control','placeholder'=>'Введите e-mail']) !!}
                             @else
                                 {!! Form::text('email', old('email'),['class'=>'form-control','placeholder'=>'Введите e-mail']) !!}
                             @endif
@@ -57,7 +66,11 @@
                             @error('phone')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            {!! Form::text('phone', old('phone'),['class'=>'form-control','placeholder'=>'79XXXXXXXXX','type'=>'tel']) !!}
+                            @if (isset($userData->phone))
+                                {!! Form::text('phone', old('phone',$userData->phone),['class'=>'form-control','placeholder'=>'79XXXXXXXXX','type'=>'tel']) !!}
+                            @else
+                                {!! Form::text('phone', old('phone'),['class'=>'form-control','placeholder'=>'79XXXXXXXXX','type'=>'tel']) !!}
+                            @endif
                         </div>
 
                         <div class="form-group">

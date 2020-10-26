@@ -30,24 +30,29 @@ class FormController extends Controller
     }
 
     /**
-     * @param $eventId
+     * @param  $eventId
      * @return Application|Factory|View
      */
     public function getForm($eventId)
     {
         if (Auth::check()) {
             $user = Auth::user();
+            if (count($user->entries) != 0) {
+                $userData = $user->entries->first();
+            } else {
+                $userData = $user;
+            }
         } else {
-            $user = null;
+            $userData = null;
         }
         $events = $this->eventRepository->all();
         $eventTitles = $this->eventRepository->getTitlesOfEvents($events);
-        return view('layouts.form', ['events' => $eventTitles, 'eventId' => $eventId, 'user' => $user]);
+        return view('layouts.form', ['events' => $eventTitles, 'eventId' => $eventId, 'userData' => $userData]);
     }
 
     /**
-     * @param FormValidation $request
-     * @param $eventId
+     * @param  FormValidation $request
+     * @param  $eventId
      * @return RedirectResponse
      */
     public function postForm(FormValidation $request, $eventId)

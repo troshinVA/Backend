@@ -51,7 +51,7 @@ class Bitrix
     }
 
     /**
-     * @param $entries
+     * @param  $entries
      * @return mixed
      */
     public function checkLeadStatus($entries)
@@ -70,8 +70,8 @@ class Bitrix
     }
 
     /**
-     * @param array $queryDataInput
-     * @param string $action
+     * @param  array  $queryDataInput
+     * @param  string $action
      * @return mixed
      */
     public function curlBitrixConnect(array $queryDataInput, string $action)

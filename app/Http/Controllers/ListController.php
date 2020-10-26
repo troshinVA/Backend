@@ -25,6 +25,7 @@ class ListController extends Controller
 
     /**
      * ListController constructor.
+     *
      * @param EventRepository $eventRepository
      */
     public function __construct(EventRepository $eventRepository)
@@ -33,7 +34,7 @@ class ListController extends Controller
     }
 
     /**
-     * @param $eventId
+     * @param  $eventId
      * @return Entry|Factory|View
      */
     public function execute($eventId)

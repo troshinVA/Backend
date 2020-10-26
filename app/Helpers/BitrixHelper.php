@@ -7,7 +7,7 @@ use App\Models\Entry;
 class BitrixHelper
 {
     /**
-     * @param Entry $entry
+     * @param  Entry $entry
      * @return array
      */
     public static function setDataAddLead(Entry $entry)
