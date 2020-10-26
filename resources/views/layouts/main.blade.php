@@ -7,7 +7,7 @@
             <h1>Доступные конференции</h1>
             <div class="card">
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table table-responsive">
 
                         <tr>
                             <th>Название</th>

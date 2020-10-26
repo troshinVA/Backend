@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-header"><h4>Участники конференции</h4></div>
             <div class="card-body">
-                <table class="table">
+                <table class="table table-responsive">
                     <tr>
                         <th>Участник</th>
                         <th>Подразделение</th>

@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-header"><h4>Доклады</h4></div>
             <div class="card-body">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-responsive">
                     <tr>
                         <th class="thead-default">Тема доклада</th>
                         <th class="thead-default">Докладчик</th>
